@@ -45,6 +45,9 @@
 \newcommand{\sgn}{\text{sgn}}
 \newcommand{\Lp}[1]{L^{#1}(\T)}
 \newcommand{\C}{\mathcal{C}}
+\newcommand{\module}[1]{\left \lvert #1 \right \rvert}
+\newcommand{\scalaire}[2]{\left \langle {#1},\ {#2} \right \rangle}
+
 
 
 
@@ -144,8 +147,101 @@ On peut alors poser $\tilde f(x) = \frac{a+b}{2} f \circ h (x)$ et on a alors qu
 \]
 Comme la fonction $h$ est un polynôme de degrés un elle est bijective de $[-1,1]$ dans $[a,b]$. Alors si $v$ est solution de la dernière EDO on peut inverser la construction en posant $u =h^{-1} \circ v$ on voit que $u$ est solution de la première EDO.
 
+\subsection{Quastion 4}
+
+On cherche ici une solution $u \in H^2(]-1,1[)$ de 
+
+\begin{equation}\label{eq:problem_3}
+ \begin{cases}
+  -(\alpha(x) u'(x))' + \gamma(x) u(x) = f(x) \quad \forall x \in ]-1,1[ \\
+  u(-1) = u(1) = 0
+ \end{cases}.
+\end{equation}
 
 
+On commence par trouver une solution à la formulation variationnelle de \eqref{eq:problem_3} dans l'espace $H_0^1(]-1,1[)$. Soit $\phi \in H_0^1(]-1,1[)$ on a alors 
+\[
+ -\int _{-1}^1 (\alpha(t)u'(t))' \phi(t)\ dt + \int _{-1}^1 \gamma(t) u(t) \phi(t) \ dt = \int _{-1}^1 f(t) \phi(t) \ dt.
+\]
+En intégrant par parties on trouve
+\[
+ \int _{-1}^1 (\alpha(t)u'(t)) \phi'(t)\ dt + \int _{-1}^1 \gamma(t) u(t) \phi(t) \ dt = \int _{-1}^1 f(t) \phi(t) \ dt.
+\]
+
+On cherche ensuite à appliquer le théorème de Lax-Milgram dans $H_0^1(]-1,1[)$. Pour cela on pose $a$ la forme bilinéaire 
+\[
+ a : (\phi,\psi) \in (H_0^1(]-1,1[))^2 \mapsto \int _{-1}^1 (\alpha(t)\phi'(t)) \psi'(t)\ dt + \int _{-1}^1 \gamma(t) \phi(t) \psi(t) \ dt
+\]
+et $l$ la forme linéaire 
+\[
+ l : \phi \in H_0^1(]-1,1[) \mapsto \int _{-1}^1 f(t) \phi(t) \ dt.
+\]
+
+On a alors 
+\[
+ \module{\langle l, \phi \rangle} \leq  \int _{-1}^1 \module{f(t) \phi(t)} \ dt \leq \norm{f}{L^2}\norm{\phi}{L^2} \leq \norm{f}{L^2}\norm{\phi}{H^1}
+\]
+ce qui montre que $l$ est une forme linéaire continue sur $H_0^1(]-1,1[)$.
+De plus on a aussi 
+\begin{align*}
+ \module{a(\phi,\psi)} &\leq \int _{-1}^1 \module{\alpha(t)\phi'(t) \psi'(t)} \ dt + \int _{-1}^1 \module{\gamma(t) \phi(t) \psi(t)} \ dt \\
+ & \leq \norm{\alpha}{L^\infty} \int _{-1}^1 \module{\phi'(t) \psi'(t)} \ dt + \norm{\gamma}{L^\infty}\int _{-1}^1 \module{\phi(t) \psi(t)} \ dt \\
+ & \leq M \left ( \norm{\phi'}{L^2} \norm{\psi'}{L^2} + \norm{\phi}{L^2} \norm{\psi}{L^2} \right ) \\
+ & \leq M \sqrt{\norm{\phi}{L^2}^2 + \norm{\phi'}{L^2}^2} \sqrt {\norm{\psi}{L^2}^2 + \norm{\psi'}{L^2}^2} \\
+ & = M \norm{\phi}{H^1}\norm{\psi}{H^1}
+\end{align*}
+Ce qui montre que $a$ est une forme bilinéaire continue sur $H_0^1(]-1,1[)$.
+
+Il reste donc a montrer que $a$ est coercive. Pour cela il suffit de voir que 
+\[
+ a(\phi,\phi) = \int_{-1}^1 \alpha(t) \module{\phi'(t)}^2\ dt + \int_{-1}^1 \gamma(t) \module{\phi(t)}^2\ dt \geq \alpha_0 \norm{\phi'}{L^2}^2
+\]
+et par l'inégalité de Poincaré on sait que la norme $\phi \mapsto \norm{\phi'}{L^2}$ est équivalente à la norme usuelle de $H_0^1(]-1,1[)$. 
+
+On peut à présent appliquer le théorème de Lax-Milgram pour obtenir l'existence d'une unique solution $u$ à la formulation variationnelle du problème \eqref{eq:problem_3} dans $H_0^1(]-1,1[)$. Il nous faut à présent montrer que cette solution est dans $H_0^2(]-1,1[)$, c'est-à-dire qu'elle admet une dérivée faible seconde qui soit dans $L^2(]-1,1[)$. On cherche donc une fonction $g \in L^2(]-1,1[)$ qui vérifie 
+\[
+ - \int u \phi' = \int g \phi
+\]
+pour toute fonction test $\phi \in \mathcal{D}(]-1,1[)$. 
+
+Comme $u$ est solution de la formulation variationnelle du problème, on sait déjà que 
+\[
+ \int _{-1}^1 (\alpha(t)u'(t)) \phi'(t)\ dt = \int _{-1}^1 (f(t) - \gamma(t) u(t)) \phi(t) \ dt.
+\]
+Ce qui signifie que la fonction $\alpha u'$ admet comme dérivée faible $\gamma u -f$ qui se trouve être dans $L^2$. On a donc que $\alpha u \in H^1$. Or on sait que $(\alpha u')' = \alpha' u' + \alpha u''$. Ce qui donne 
+\[
+ u'' = \frac{\gamma u - \alpha' u' - f}{\alpha}
+\]
+qui a bien un sens car $\alpha$ est supposée strictement positive.De plus peut voir que $u''$ est dans $L^2$. Ce qui montre que la solution $u$ de \eqref{eq:problem_3} est dans $H^2$.
+
+\subsection{Question 5}
+
+On se donne la fonction 
+\[
+ \omega (x) = \frac{1}{\sqrt{1 - x^2}}
+\]
+et on cherche à montrer que la forme bilinéaire 
+\[
+ \scalaire{\phi}{\psi}_\omega = \int_{-1}^1 \phi(x) \psi(x) \omega(x) \ dx 
+\]
+définit un produit scalaire sur $\mathcal{C}^0([-1,1])$.
+
+La forme bilinéaire $\scalaire{\cdot}{\cdot}\omega$ est clairement symétrique et on a 
+\begin{align*}
+ \scalaire{\phi}{\phi}_\omega = \int \frac{\module{\phi(x)}^2}{\sqrt{1-x^2}} \ dx \geq 0
+\end{align*}
+et on remarque que $\scalaire{\phi}{\phi}_\omega = 0$ si, et seulement si, $\phi = 0$ car $\omega$ est strictement positive sur $]-1,1[$.
+Il reste juste à monter que l'intégrale est bien définie. Or on a 
+\begin{align*}
+ \module{\scalaire{\phi}{\psi}_\omega} \leq \norm{\phi}{\infty} \norm{\psi}{\infty} \int_{-1}^1 \frac{1}{\sqrt{1 - x^2}}\ dx.
+\end{align*}
+
+Or on a 
+\begin{align*}
+ \int_{-1}^1 \frac{1}{\sqrt{1 - x^2}}\ dx &= 2 \int_0^1 \frac{1}{\sqrt{1-x} \sqrt{1+x}}\ dx \\
+ & \leq 2 \int_0^1 \frac{1}{\sqrt{1-x}}\ dx < + \infty.
+\end{align*}
+Ce qui montre que $\scalaire{\cdot}{\cdot}\omega$ définit un produit scalaire.
 \end{document}
 
 
