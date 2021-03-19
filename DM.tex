@@ -242,6 +242,132 @@ Or on a
  & \leq 2 \int_0^1 \frac{1}{\sqrt{1-x}}\ dx < + \infty.
 \end{align*}
 Ce qui montre que $\scalaire{\cdot}{\cdot}\omega$ définit un produit scalaire.
+
+
+
+
+
+\newpage
+\section{Méthode des rectangles pour l’approximation de l’intégrale d’une fonction périodique sur un intervalle de période}
+
+On rappelle ici le r\'esultat suivant (utilis\'e \`a plusieurs reprises par la suite) :
+En consid\'erant une fonction f de $\mathbb{R}$ dans $\mathbb{R}$, p\'eriodique de p\'eriode $2 \pi$ assez r\'eguli\`ere. Alors la s\'erie de fourier associ\'ee \`a f, not\'ee $S_Nf$ converge normalement (et donc uniform\'ement) vers f sur $[0, 2\pi]$ lorsque N tend vers l'infini
+
+\subsection{Question 1}
+
+Soient n et k deux entiers naturels tels que $n \geq 2$ et $k \geq 2$.\\.
+On pose $k=pn+r$, avec $0 < r \leq n-1$, la division euclidienne de k par n. Montrons que $S_{n,k} = 0$ si $r=0$ et  $S_{n,k} = n$ sinon :
+\[
+S_{n,k} = \sum_{j=0}^{n-1} cos\left(\frac{2kj\pi}{n}\right)
+= \sum_{j=0}^{n-1} cos\left(\frac{2pnj\pi}{n}+\frac{2rj\pi}{n}\right)
+= \sum_{j=0}^{n-1} cos\left(2pj\pi+\frac{2rj\pi}{n} \right)
+\]
+la fonction cosinus \'etant p\'eriodique de p\'eriode $2\pi$, on a donc :
+\[
+S_{n,k} = \sum_{j=0}^{n-1} cos\left(\frac{2rj\pi}{n} \right)
+\]
+Si r=0, on a directement le r\'esultat :
+\[
+S_{n,k} = \sum_{j=0}^{n-1} cos\left(\frac{2\pi}{n} \right)
+= \sum_{j=0}^{n-1} 1
+= n
+\]
+Sinon, on utilise la formule d'Euler pour le cosinus :
+\[
+\cos(x)= Re\left( {\mathrm  {e}}^{{{\mathrm  {i}}\,x}} \right) 
+\]
+O\`u Re d\'esigne la partie r\'elle d'un complexe.
+Ce qui nous donne :
+\[
+S_{n,k} = \sum_{j=0}^{n-1} Re\left( {\mathrm  {e}}^{{{\mathrm  {i}}\,\frac{2rj\pi}{n}}} \right)
+=Re\left( \sum_{j=0}^{n-1} {\mathrm  {e}}^{{{\mathrm  {i}}\,\frac{2rj\pi}{n}}} \right)
+\]
+OR, les $\mathrm{e}^{{{\mathrm  {i}}\,\frac{2rj\pi}{n}}}$ sont les n-i\`emes racines de l'unit\'e. On a donc la propri\'et\'e que leur somme vaut 0. Ceci nous permet de conclure :
+\[
+S_{n,k} =Re\left( \sum_{j=0}^{n-1} {\mathrm  {e}}^{{{\mathrm  {i}}\,\frac{2rj\pi}{n}}} \right)
+=Re\left( 0 \right)
+=0
+\]
+
+\subsection{Question 2}
+\subsubsection {Partie a}
+
+Soit $\left(x_j\right)_{0 \leq j \leq n} $ une subdivision uniforme de l'intervalle $[0, \pi]$. Notons h le pas de la subdivision.\\
+On a par d\'efinition de la formule de quadrature des rectangles \`a gauche et d'apr\`es le d\'evelopppement en s\'erie de f :
+\[
+I_n = \sum_{j=0}^{n-1} f(x_j) \cdot h
+= \frac{2 \pi}{n} \sum_{j=0}^{n-1} f(x_j)
+= \frac{2 \pi}{n} \sum_{j=0}^{n-1} \left( a_0 + \sum_{k=1}^{+ \infty} a_k cos(k x_j)\right)
+\]
+Puisque la s\'erie converge, on peut intervertir les sommes :
+\[
+I_n = \frac{2 \pi}{n} \cdot n a_0 + \frac{2 \pi}{n} \sum_{k=1}^{+ \infty} \left( \sum_{j=0}^{n-1} a_k cos(k x_j) \right)
+= 2 \pi a_0 + \frac{2 \pi}{n} \sum_{k=1}^{+ \infty} \left( a_k \sum_{j=0}^{n-1} cos(k x_j) \right)
+\]
+En remarquant que les $x_j = \frac{2 \pi j}{n}$ on a donc :
+\[
+I_n = 2 \pi a_0 + \frac{2 \pi}{n} \sum_{k=1}^{+ \infty} \left( \sum_{j=0}^{n-1} a_k cos\left( \frac{2 k j \pi }{n} \right) \right)
+= 2 \pi a_0 + \frac{2 \pi}{n} \sum_{k=1}^{+ \infty} a_k S_{n,k}
+\]
+Ce qui conclut cette question.
+
+\subsubsection{Partie b}
+
+Posons $I= \int_{0}^{2 \pi} f(x) dx$. On s'int\'eresse \`a l'erreur $I_n - I$. On a d'un part :
+\begin{align*}
+I = &\int_{0}^{2 \pi} f(x) = \int_{0}^{2 \pi} \sum_{k=0}^{+ \infty} a_k cos(kx) dx
+= \int_{0}^{2 \pi} a_0 + \sum_{k=1}^{+ \infty} a_k cos(kx) dx \\
+=& \int_{0}^{2 \pi} a_0 dx + \int_{0}^{2 \pi} \sum_{k=}^{+ \infty} a_k cos(kx) dx
+= 2 \pi a_0 + \sum_{k=1}^{+ \infty} \int_{0}^{2 \pi} a_k cos(kx) dx\\
+=& 2 \pi a_0 + \sum_{k=1}^{+ \infty} {\left[ \frac{sin(kx)}{k} \right]}_0^{2\pi}
+= 2 \pi a_0 + \sum_{k=1}^{+ \infty} 0 = 2 \pi a_0 + 0 = 2 \pi a_0
+\end{align*}
+L'interversion s\'erie int\'egrale est justifi\'ee car la s\'erie de Fourier converge uniform\'ement vers f. \\
+D'autre part, on a par la question pr\'ec\'edente (et puisque la s\'erie converge) :
+\[
+\sum_{k=1}^{+ \infty} a_k S_{n,k} = \sum_{p=1}^{+ \infty} a_{pn} S_{n,pn}
+= \sum_{p=1}^{+ \infty} a_{pn} \cdot n
+= n \cdot \sum_{p=1}^{+ \infty} a_{pn}
+\]
+On en d\'eduit donc :
+\begin{align*}
+I_n - I =& I_n -  2 \pi a_0 = 2 \pi a_0 + \frac{2 \pi}{n} n \cdot \sum_{p=1}^{+ \infty} a_{pn} -  2 \pi a_0\\
+=& 2 \pi \sum_{p=1}^{+ \infty} a_{pn}
+\end{align*}
+Ce qui conclut.
+
+\subsubsection{Partie c}
+On s'int\'eresse au comportement de la quantit\'e $I_n-I$ lorsque n tend vers l'infini. On peut encore une fois utiliser la convergence uniforme de la s\'erie de Fourier pour l'intervertion limite-s\'erie.
+
+\begin{align*}
+\lim_{n\to\infty} I_n-I  &=  \lim_{n\to\infty} 2 \pi \sum_{p=1}^{+ \infty} a_{pn} \\
+&\leq \lim_{n\to\infty} 2 \pi \left \sum_{p=1}^{+ \infty} a_{pn} \right\\
+&\leq \lim_{n\to\infty} 2 \pi \sum_{p=1}^{+ \infty}   a_{pn} \\
+\end{align*}
+
+Justifions l'utilisation du th\'eor\`eme de convergence domin\'ee. HELP.
+L'interversion limite-s\'erie est donc bien justifi\'ee et on a : 
+\begin{align*}
+\lim_{n\to\infty}  I_n-I  &=2 \pi \sum_{p=1}^{+ \infty} \lim_{n\to\infty}  a_{pn}  \\
+&= 2 \pi \sum_{p=1}^{+ \infty} 0 = 0
+\end{align*}
+
+\subsection{Question 3}
+
+Supposons que f est de classe $\C^q$ (et v\'erifiant les autres hypoth`eses de l'\'enonc\'e. Les $a_k$ v\'erifient donc $a_k=\frac{\alpha_k}{n^q}$, o\`u $\alpha_k$ est une suite r\'elle tendant vers 0 lorsque k tend vers l'infini.
+On a alors en particulier qu'il existe M r\'eel positif tel que : $|\alpha_k| \leq M$.\\
+Cela nous donne que quel que soient p et n entiers positifs, on a : $|a_{pn}| \leq \frac{M}{(pn)^q}$
+Et donc :
+\begin{align*}
+I_n - I =& 2 \pi \sum_{p=1}^{+ \infty} a_{pn}\\
+\leq& 2 \pi \sum_{p=1}^{+ \infty} \frac{M}{(pn)^q}\\
+\leq& \frac {2 \pi}{n^q}\sum_{p=1}^{+ \infty} \frac{M}{p^q}\\
+\end{align*}
+Puisque la s\'erie converge (s\'erie de Riemann) on a bien qu'il existe une constante r\'elle C telle que : $|I_n - I| \leq \frac{C}{n^q}$.
+
+On peut interpr\'eter ce r\'esultat de la mani\`ere suivant : l'ordre de convergence de la m\'ethode des rectangles pour le type de fonction que nous \'etudions (paires et p\'eriodiques sur $[0;2 \pi]$) est \'egal \`a l'ordre q de la classe de r\'egulartit\'e de la fonction \'etudi\'ee.
+\end{document}
+
 \end{document}
 
 
