@@ -47,6 +47,8 @@
 \newcommand{\C}{\mathcal{C}}
 \newcommand{\module}[1]{\left \lvert #1 \right \rvert}
 \newcommand{\scalaire}[2]{\left \langle {#1},\ {#2} \right \rangle}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
 
 
 
@@ -241,7 +243,48 @@ Or on a
  \int_{-1}^1 \frac{1}{\sqrt{1 - x^2}}\ dx &= 2 \int_0^1 \frac{1}{\sqrt{1-x} \sqrt{1+x}}\ dx \\
  & \leq 2 \int_0^1 \frac{1}{\sqrt{1-x}}\ dx < + \infty.
 \end{align*}
-Ce qui montre que $\scalaire{\cdot}{\cdot}\omega$ définit un produit scalaire.
+Ce qui montre que $\scalaire{\cdot}{\cdot}_\omega$ définit un produit scalaire.
+
+
+\section{Polynômes de Tchebychev}
+
+\subsection{Question 1}
+
+On montre que pour tout $n \in \N$ in existe une unique polynôme $T_n \in \R_n[X]$ tel que $T_n(\cos(\omega)) = \cos(n\omega)$. On procède pae récurrence en commençant par remarquer que que l'on a clairement $T_0(X) = 1$ et $T_1(X) = X$. Ensuite on a 
+\begin{align*}
+ (\cos(\omega))^n &= \left ( \frac{e^{i\omega} + e^{-i\omega}}{2} \right ) ^n = 2^{-n} \sum_{k=0}^n \binom{n}{k} e^{ik\omega}e^{-i(n-k)\omega} \\
+ &= 2^{-n} \sum_{k=0}^n \binom{n}{k} e^{i(2k-n)\omega}.
+\end{align*}
+
+On note de plus que $\binom{n}{k} = \binom{n}{n-k} = \frac{n!}{k!(n-k)!}$ et on note alors cette quantité $h_k^n$. On a alors
+\begin{align*}
+ (\cos(\omega))^n &= 2^{-n} \sum_{k=0}^{\lfloor n/2 \rfloor } h_k^n \left ( e^{i(2k -n) \omega} + e^{i(n - 2k)\omega} \right) \\
+ &= 2^{-(n-1)} \sum_{k=0}^{\lfloor n/2 \rfloor } h_k^n \cos((n - 2k)\omega)).
+\end{align*}
+
+On note à présent $m = \lfloor n/2 \rfloor$ et d'après l'hypothèse de récurrence pour tout $k \in \{1, \dots, m\}$ il existe un polynôme $T_{n-2k}(X)$ tel que $T_{n - 2k}(\cos(\omega)) = \cos((n - 2k)\omega)$. On peut alors poser 
+\[
+ T_n(X) = X^n - \sum_{k=1}^m 2^{(n-1)} \widetilde{h_k^n} T_{n-2k}(X)
+\]
+où l'on a noté $\widetilde{h_k^n} = \begin{cases}
+                                 (h_k^n)^{-1}, &\quad h_k^n \neq 0 \\
+                                 0, &\quad h_k^n = 0
+                                \end{cases}$.
+
+Pour l'unicité, si on suppose qu'il existe un autre polynôme $R_n(X)$ vérifiant que $R_n(\cos(\omega)) = \cos(n\omega)$. Alors pour tout $\omega \in [0,2\pi]$ $\cos(\omega)$ est une racine du polynôme $T_n - R_n$ ce qui implique $T_n - R_n = 0$.
+
+\subsection{Question 2}
+
+On montre que $T_{n + 2}(x) + T_n(x) = 2xT_{n+1}(x)$. Pour cela on a 
+\begin{align*}
+ T_{n + 2}(cos(\omega)) + T_n(\cos(\omega)) &= \cos((n+2)\omega) + \cos(n\omega) \\
+ &= \frac{e^{i((n+2)\omega)} + e^{-i((n+2)\omega)} + e^{in\omega} + e^{in\omega}}{2} \\
+ &= \frac{e^{i((n+1)\omega)}(e^{in\omega} + e^{-in\omega}) + e^{-i((n+1)\omega)}(e^{in\omega} + e^{-in\omega})} {2} \\
+ &= 2\cos(\omega)\cos((n+1)\omega) \\
+ &= 2\cos(\omega) T_{n+1}(\cos(\omega)).
+\end{align*}
+Comme de plus $\cos$ est une bijection de $[0,2\pi]$ dans $[-1,1]$ on a montré que pour tout $x \in [-1,1]$ on a $T_{n + 2}(x) + T_n(x) = 2xT_{n+1}(x)$.
+
 \end{document}
 
 
