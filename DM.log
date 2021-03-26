@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.30)  21 MAR 2021 13:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.30)  26 MAR 2021 16:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -835,38 +835,67 @@ Overfull \hbox (32.2156pt too wide) detected at line 123
 []
  []
 
-[3] [4] [5] [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 288.
- [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 288.
+[3] [4] [5] [6] [7] [8]
+Overfull \hbox (10.8946pt too wide) in paragraph at lines 339--340
+ []\T1/futs/b/n/12 a.[] \T1/futs/m/n/12 Pour tout $\FML/futmi/m/it/12 n$ \T1/fu
+ts/m/n/12 on a $\FML/futmi/m/it/12 T[]\T1/futs/m/n/12 ([](\FML/futmi/m/it/12 x\
+T1/futs/m/n/12 )) \FMS/futm/m/n/12 Å []\T1/futs/m/n/12 (\FML/futmi/m/it/12 nx\T
+1/futs/m/n/12 )$. Alors en po-sant $\FML/futmi/m/it/12 ^^R[] \FMS/futm/m/n/12 Å
+ []\FML/futmi/m/it/12 ^^Y$ \T1/futs/m/n/12 pour $\FML/futmi/m/it/12 k \FMS/futm
+/m/n/12 2 f\T1/futs/m/n/12 0\FML/futmi/m/it/12 ; [] ; n \FMS/futm/m/n/12 ^^@
+ []
+
+
+Overfull \hbox (35.69218pt too wide) in paragraph at lines 339--340
+\T1/futs/m/n/12 1\FMS/futm/m/n/12 g$ \T1/futs/m/n/12 on a $[](\FML/futmi/m/it/1
+2 n^^R[]\T1/futs/m/n/12 ) \FMS/futm/m/n/12 Å [] [] Å \T1/futs/m/n/12 0$ et donc
+ $\FML/futmi/m/it/12 T[]\T1/futs/m/n/12 ([](\FML/futmi/m/it/12 ^^R[]\T1/futs/m/
+n/12 )) \FMS/futm/m/n/12 Å \T1/futs/m/n/12 0$. Alors la fa-mille $\FMS/futm/m/n
+/12 f[]\T1/futs/m/n/12 (\FML/futmi/m/it/12 ^^R[]\T1/futs/m/n/12 )\FMS/futm/m/n/
+12 g[]$
+ []
+
+
+Overfull \hbox (5.70491pt too wide) in paragraph at lines 344--345
+ []\T1/futs/b/n/12 b.[] \T1/futs/m/n/12 A par-tir de la re-la-tion $\FML/futmi/
+m/it/12 T[]\T1/futs/m/n/12 (\FML/futmi/m/it/12 x\T1/futs/m/n/12 ) \FMS/futm/m/n
+/12 Å \T1/futs/m/n/12 2\FML/futmi/m/it/12 xT[]\T1/futs/m/n/12 (\FML/futmi/m/it/
+12 x\T1/futs/m/n/12 ) \FMS/futm/m/n/12 ^^@ \FML/futmi/m/it/12 T[]\T1/futs/m/n/1
+2 (\FML/futmi/m/it/12 x\T1/futs/m/n/12 )$ on trouve fa-ci-le-ment que $\FML/fut
+mi/m/it/12 T[]\T1/futs/m/n/12 (1) \FMS/futm/m/n/12 Å
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 356.
+[9] [10]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 356.
  (./DM.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 288.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 288.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 356.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 356.
 Package rerunfilecheck Info: File `DM.out' has not changed.
-(rerunfilecheck)             Checksum: 5336638F8BA378475060B50D488B008C;525.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 288.
+(rerunfilecheck)             Checksum: 1991BCAD167B7236EA9B6ABFBC7DEF0C;645.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 356.
  ) 
 Here is how much of TeX's memory you used:
- 11463 strings out of 481239
- 169190 string characters out of 5920377
- 457809 words of memory out of 5000000
- 26444 multiletter control sequences out of 15000+600000
- 607412 words of font info for 113 fonts, out of 8000000 for 9000
+ 11484 strings out of 481239
+ 169415 string characters out of 5920377
+ 460809 words of memory out of 5000000
+ 26448 multiletter control sequences out of 15000+600000
+ 612488 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,42p,904b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,42p,904b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/fourier/fourier-bb.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/fourier/fourier-mcl.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/fourier/fourier-mex.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/fourier/fourier-mlit.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/fourier/fourier-ms.pfb></usr/share/texlive/texmf-dist/fonts/type1/a
-dobe/utopia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/
-putr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-
-Output written on DM.pdf (7 pages, 87335 bytes).
+ts/type1/public/fourier/fourier-ml.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/fourier/fourier-mlit.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/fourier/fourier-ms.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/u
+topia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on DM.pdf (10 pages, 97838 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 172 PDF objects out of 1000 (max. 8388607)
+ 149 compressed objects within 2 object streams
+ 35 named destinations out of 1000 (max. 500000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 

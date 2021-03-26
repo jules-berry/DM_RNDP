@@ -3,7 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{babel}
 \usepackage{amssymb}
-\usepackage{mathrsfs} 
+\usepackage{mathrsfs}
 \usepackage{enumerate}
 \usepackage{amsthm}
 \usepackage{amsmath}
@@ -65,7 +65,7 @@
 
 \section{Préliminaires}
 \subsection{Question 1}
- \item On cherche une fonction $u \in \C^2([-1,1])$ telle que 
+ \item On cherche une fonction $u \in \C^2([-1,1])$ telle que
  \begin{equation}\label{eq:problème_1}
   \begin{cases}
    -(\alpha(x) u'(x))' + \gamma(x)u(x) = f(x) \quad \forall x \in ] -1, 1[, \\
@@ -73,11 +73,11 @@
   \end{cases}.
  \end{equation}
 
- Soit $u$ un solution de ce problème et on pose 
+ Soit $u$ un solution de ce problème et on pose
  \[
   v(x) = u(x) - c_1 \frac{x - 1}{2} - c_2 \frac{x+1}{2}
  \]
-cette fonction est alors aussi $\C^2([-1,1])$ et on a de plus 
+cette fonction est alors aussi $\C^2([-1,1])$ et on a de plus
 \[
  v'(x) = u'(x) - \frac{c_1 + c_2}{2}, \quad v''(x) = u''(x).
 \]
@@ -95,28 +95,28 @@ On a donc que la fonction $v$ est solution du problème
 \end{equation}
 où $\tilde f(x) = f(x) + \gamma(x)\left(c_1 \frac{x-1}{2} + c_2 \frac{x+1}{2}\right) - \frac{c_1 + c_2}{2}\alpha'(x)$.
 
-De plus il est clair que $v(-1) = v(1) = 0$ et comme $f \in L^2(]-1,1[)$ , $\alpha \in \C^1([-1,1])$ et $\gamma \in L^\infty ([-1,1]) \subset L^2(]-1,1[)$ on a aussi $\tilde f \in L^2([-1,1])$. 
+De plus il est clair que $v(-1) = v(1) = 0$ et comme $f \in L^2(]-1,1[)$ , $\alpha \in \C^1([-1,1])$ et $\gamma \in L^\infty ([-1,1]) \subset L^2(]-1,1[)$ on a aussi $\tilde f \in L^2([-1,1])$.
 
 On voit alors que le problème \eqref{eq:problème_2} est de la forme souhaitée. De plus si $v$ est une solution de ce problème et en posant $w(x) = v(x) + c_1 \frac{x - 1}{2} + c_2 \frac{x+1}{2}$, on peut voir que $w$ est une solution de \eqref{eq:problème_1}. On a donc montré que l'étude de ce dernier se ramène à l'étude de \eqref{eq:problème_2}.
 
 \subsection{Question 2}
 
 On pose $u = \rho v$ où $\rho : x \in [-1,1] \mapsto \exp \left ( \frac{1}{2} \int_{-1}^x \frac{\beta(t)}{\alpha(t)}\ dt \right)$.
-Alors si $u$ est une solution de l'EDO 
+Alors si $u$ est une solution de l'EDO
 \begin{equation}
  -(\alpha u')' + \beta u' + \gamma u = f
 \end{equation}
-On remarque alors que 
+On remarque alors que
 \begin{align*}
  \rho'(x) &= \frac{d}{dx} \exp \left ( \frac{1}{2} \int_{-1}^x \frac{\beta(t)}{\alpha(t)}\ dt \right) = \frac{\beta(x)}{2\alpha(x)} \exp \left ( \frac{1}{2} \int_{-1}^x \frac{\beta(t)}{\alpha(t)}\ dt \right) \\
  &= \frac{\beta(x)}{2\alpha(x)} \rho(x).
 \end{align*}
-Et par suite 
+Et par suite
 \[
  \rho'' = \frac{1}{2} \left ( \frac{\beta' \alpha - \beta \alpha'}{\alpha^2}\rho + \frac{\beta}{\alpha} \rho'\right) = \frac{\beta' \alpha + 2 \beta^2 - \beta \alpha'}{2 \alpha^2}\rho.
 \]
 
-En réétudiant l'EDO on trouve donc 
+En réétudiant l'EDO on trouve donc
 \begin{align*}
  -(\alpha u')' + \beta u' + \gamma u &= - \alpha' (\rho' v + \rho v') - \alpha ( \rho '' v + 2 \rho' v' + \rho v'') + \beta (\rho' v + \rho v') + \gamma \rho v \\
  &= \rho \left ( -\frac{\alpha' \beta v}{\alpha} - \alpha' v' - \frac{\beta' v}{2} - \frac{\beta^2 v}{\alpha} + \frac{\beta \alpha' v }{\alpha} - \beta v' - \alpha v'' + \frac{\beta^2 v}{\alpha} + \beta v' + \gamma v \right) = f
@@ -125,7 +125,7 @@ Par définition de la fonction de $\rho$ celle-ci est strictement positive et on
 \[
  - \alpha' v' - \alpha v'' - \frac{1}{2} \beta' v +\gamma v = \frac{f}{\rho}.
 \]
-Alors en posant $\delta = \gamma - \frac{1}{2}\beta'$ et $g = \frac{f}{\rho}$. On trouve donc 
+Alors en posant $\delta = \gamma - \frac{1}{2}\beta'$ et $g = \frac{f}{\rho}$. On trouve donc
 \begin{equation}\label{eq:EDO_1}
  -(\alpha v')' + \delta v = g.
 \end{equation}
@@ -133,7 +133,7 @@ On remarque au passage que nous avons supposé que la fonction $\beta$ était au
 
 \subsection{Question 3}
 
-On considère l'EDO $-(\alpha u')' + \gamma u = f$ sur $[a,b]$. En posant 
+On considère l'EDO $-(\alpha u')' + \gamma u = f$ sur $[a,b]$. En posant
 \[
  h : x \in [-1,1] \mapsto a \frac{x-1}{2} + b \frac{x+1}{2}
 \]
@@ -143,7 +143,7 @@ et on considérant la fonction $v : x \in [-1,1] \mapsto u \circ h(x)$ on trouve
  &= -\frac{a + b}{2}( \alpha (h(x)) u'(h(x)))' + \frac{a + b}{2} \gamma(h(x)) u(h(x)) \\
  &= \frac{a+b}{2} f(h(x)).
 \end{align*}
-On peut alors poser $\tilde f(x) = \frac{a+b}{2} f \circ h (x)$ et on a alors que $v$ est solution de la nouvelle EDO 
+On peut alors poser $\tilde f(x) = \frac{a+b}{2} f \circ h (x)$ et on a alors que $v$ est solution de la nouvelle EDO
 \[
  -(\tilde \alpha(x) v'(x))' + \tilde \gamma (x) u(x) = \tilde f(x).
 \]
@@ -151,7 +151,7 @@ Comme la fonction $h$ est un polynôme de degrés un elle est bijective de $[-1,
 
 \subsection{Quastion 4}
 
-On cherche ici une solution $u \in H^2(]-1,1[)$ de 
+On cherche ici une solution $u \in H^2(]-1,1[)$ de
 
 \begin{equation}\label{eq:problem_3}
  \begin{cases}
@@ -161,7 +161,7 @@ On cherche ici une solution $u \in H^2(]-1,1[)$ de
 \end{equation}
 
 
-On commence par trouver une solution à la formulation variationnelle de \eqref{eq:problem_3} dans l'espace $H_0^1(]-1,1[)$. Soit $\phi \in H_0^1(]-1,1[)$ on a alors 
+On commence par trouver une solution à la formulation variationnelle de \eqref{eq:problem_3} dans l'espace $H_0^1(]-1,1[)$. Soit $\phi \in H_0^1(]-1,1[)$ on a alors
 \[
  -\int _{-1}^1 (\alpha(t)u'(t))' \phi(t)\ dt + \int _{-1}^1 \gamma(t) u(t) \phi(t) \ dt = \int _{-1}^1 f(t) \phi(t) \ dt.
 \]
@@ -170,21 +170,21 @@ En intégrant par parties on trouve
  \int _{-1}^1 (\alpha(t)u'(t)) \phi'(t)\ dt + \int _{-1}^1 \gamma(t) u(t) \phi(t) \ dt = \int _{-1}^1 f(t) \phi(t) \ dt.
 \]
 
-On cherche ensuite à appliquer le théorème de Lax-Milgram dans $H_0^1(]-1,1[)$. Pour cela on pose $a$ la forme bilinéaire 
+On cherche ensuite à appliquer le théorème de Lax-Milgram dans $H_0^1(]-1,1[)$. Pour cela on pose $a$ la forme bilinéaire
 \[
  a : (\phi,\psi) \in (H_0^1(]-1,1[))^2 \mapsto \int _{-1}^1 (\alpha(t)\phi'(t)) \psi'(t)\ dt + \int _{-1}^1 \gamma(t) \phi(t) \psi(t) \ dt
 \]
-et $l$ la forme linéaire 
+et $l$ la forme linéaire
 \[
  l : \phi \in H_0^1(]-1,1[) \mapsto \int _{-1}^1 f(t) \phi(t) \ dt.
 \]
 
-On a alors 
+On a alors
 \[
  \module{\langle l, \phi \rangle} \leq  \int _{-1}^1 \module{f(t) \phi(t)} \ dt \leq \norm{f}{L^2}\norm{\phi}{L^2} \leq \norm{f}{L^2}\norm{\phi}{H^1}
 \]
 ce qui montre que $l$ est une forme linéaire continue sur $H_0^1(]-1,1[)$.
-De plus on a aussi 
+De plus on a aussi
 \begin{align*}
  \module{a(\phi,\psi)} &\leq \int _{-1}^1 \module{\alpha(t)\phi'(t) \psi'(t)} \ dt + \int _{-1}^1 \module{\gamma(t) \phi(t) \psi(t)} \ dt \\
  & \leq \norm{\alpha}{L^\infty} \int _{-1}^1 \module{\phi'(t) \psi'(t)} \ dt + \norm{\gamma}{L^\infty}\int _{-1}^1 \module{\phi(t) \psi(t)} \ dt \\
@@ -194,23 +194,23 @@ De plus on a aussi
 \end{align*}
 Ce qui montre que $a$ est une forme bilinéaire continue sur $H_0^1(]-1,1[)$.
 
-Il reste donc a montrer que $a$ est coercive. Pour cela il suffit de voir que 
+Il reste donc a montrer que $a$ est coercive. Pour cela il suffit de voir que
 \[
  a(\phi,\phi) = \int_{-1}^1 \alpha(t) \module{\phi'(t)}^2\ dt + \int_{-1}^1 \gamma(t) \module{\phi(t)}^2\ dt \geq \alpha_0 \norm{\phi'}{L^2}^2
 \]
-et par l'inégalité de Poincaré on sait que la norme $\phi \mapsto \norm{\phi'}{L^2}$ est équivalente à la norme usuelle de $H_0^1(]-1,1[)$. 
+et par l'inégalité de Poincaré on sait que la norme $\phi \mapsto \norm{\phi'}{L^2}$ est équivalente à la norme usuelle de $H_0^1(]-1,1[)$.
 
-On peut à présent appliquer le théorème de Lax-Milgram pour obtenir l'existence d'une unique solution $u$ à la formulation variationnelle du problème \eqref{eq:problem_3} dans $H_0^1(]-1,1[)$. Il nous faut à présent montrer que cette solution est dans $H_0^2(]-1,1[)$, c'est-à-dire qu'elle admet une dérivée faible seconde qui soit dans $L^2(]-1,1[)$. On cherche donc une fonction $g \in L^2(]-1,1[)$ qui vérifie 
+On peut à présent appliquer le théorème de Lax-Milgram pour obtenir l'existence d'une unique solution $u$ à la formulation variationnelle du problème \eqref{eq:problem_3} dans $H_0^1(]-1,1[)$. Il nous faut à présent montrer que cette solution est dans $H_0^2(]-1,1[)$, c'est-à-dire qu'elle admet une dérivée faible seconde qui soit dans $L^2(]-1,1[)$. On cherche donc une fonction $g \in L^2(]-1,1[)$ qui vérifie
 \[
  - \int u \phi' = \int g \phi
 \]
-pour toute fonction test $\phi \in \mathcal{D}(]-1,1[)$. 
+pour toute fonction test $\phi \in \mathcal{D}(]-1,1[)$.
 
-Comme $u$ est solution de la formulation variationnelle du problème, on sait déjà que 
+Comme $u$ est solution de la formulation variationnelle du problème, on sait déjà que
 \[
  \int _{-1}^1 (\alpha(t)u'(t)) \phi'(t)\ dt = \int _{-1}^1 (f(t) - \gamma(t) u(t)) \phi(t) \ dt.
 \]
-Ce qui signifie que la fonction $\alpha u'$ admet comme dérivée faible $\gamma u -f$ qui se trouve être dans $L^2$. On a donc que $\alpha u \in H^1$. Or on sait que $(\alpha u')' = \alpha' u' + \alpha u''$. Ce qui donne 
+Ce qui signifie que la fonction $\alpha u'$ admet comme dérivée faible $\gamma u -f$ qui se trouve être dans $L^2$. On a donc que $\alpha u \in H^1$. Or on sait que $(\alpha u')' = \alpha' u' + \alpha u''$. Ce qui donne
 \[
  u'' = \frac{\gamma u - \alpha' u' - f}{\alpha}
 \]
@@ -218,27 +218,27 @@ qui a bien un sens car $\alpha$ est supposée strictement positive.De plus peut 
 
 \subsection{Question 5}
 
-On se donne la fonction 
+On se donne la fonction
 \[
  \omega (x) = \frac{1}{\sqrt{1 - x^2}}
 \]
-et on cherche à montrer que la forme bilinéaire 
+et on cherche à montrer que la forme bilinéaire
 \[
- \scalaire{\phi}{\psi}_\omega = \int_{-1}^1 \phi(x) \psi(x) \omega(x) \ dx 
+ \scalaire{\phi}{\psi}_\omega = \int_{-1}^1 \phi(x) \psi(x) \omega(x) \ dx
 \]
 définit un produit scalaire sur $\mathcal{C}^0([-1,1])$.
 
-La forme bilinéaire $\scalaire{\cdot}{\cdot}\omega$ est clairement symétrique et on a 
+La forme bilinéaire $\scalaire{\cdot}{\cdot}\omega$ est clairement symétrique et on a
 \begin{align*}
  \scalaire{\phi}{\phi}_\omega = \int \frac{\module{\phi(x)}^2}{\sqrt{1-x^2}} \ dx \geq 0
 \end{align*}
 et on remarque que $\scalaire{\phi}{\phi}_\omega = 0$ si, et seulement si, $\phi = 0$ car $\omega$ est strictement positive sur $]-1,1[$.
-Il reste juste à monter que l'intégrale est bien définie. Or on a 
+Il reste juste à monter que l'intégrale est bien définie. Or on a
 \begin{align*}
  \module{\scalaire{\phi}{\psi}_\omega} \leq \norm{\phi}{\infty} \norm{\psi}{\infty} \int_{-1}^1 \frac{1}{\sqrt{1 - x^2}}\ dx.
 \end{align*}
 
-Or on a 
+Or on a
 \begin{align*}
  \int_{-1}^1 \frac{1}{\sqrt{1 - x^2}}\ dx &= 2 \int_0^1 \frac{1}{\sqrt{1-x} \sqrt{1+x}}\ dx \\
  & \leq 2 \int_0^1 \frac{1}{\sqrt{1-x}}\ dx < + \infty.
@@ -250,7 +250,7 @@ Ce qui montre que $\scalaire{\cdot}{\cdot}_\omega$ définit un produit scalaire.
 
 \subsection{Question 1}
 
-On montre que pour tout $n \in \N$ in existe une unique polynôme $T_n \in \R_n[X]$ tel que $T_n(\cos(\omega)) = \cos(n\omega)$. On procède pae récurrence en commençant par remarquer que que l'on a clairement $T_0(X) = 1$ et $T_1(X) = X$. Ensuite on a 
+ On montre que pour tout $n \in \N$ in existe une unique polynôme $T_n \in \R_n[X]$ tel que $T_n(\cos(\omega)) = \cos(n\omega)$. On procède par récurrence en commençant par remarquer que que l'on a clairement $T_0(X) = 1$ et $T_1(X) = X$. Ensuite on a
 \begin{align*}
  (\cos(\omega))^n &= \left ( \frac{e^{i\omega} + e^{-i\omega}}{2} \right ) ^n = 2^{-n} \sum_{k=0}^n \binom{n}{k} e^{ik\omega}e^{-i(n-k)\omega} \\
  &= 2^{-n} \sum_{k=0}^n \binom{n}{k} e^{i(2k-n)\omega}.
@@ -262,20 +262,20 @@ On note de plus que $\binom{n}{k} = \binom{n}{n-k} = \frac{n!}{k!(n-k)!}$ et on 
  &= 2^{-(n-1)} \sum_{k=0}^{\lfloor n/2 \rfloor } h_k^n \cos((n - 2k)\omega)).
 \end{align*}
 
-On note à présent $m = \lfloor n/2 \rfloor$ et d'après l'hypothèse de récurrence pour tout $k \in \{1, \dots, m\}$ il existe un polynôme $T_{n-2k}(X)$ tel que $T_{n - 2k}(\cos(\omega)) = \cos((n - 2k)\omega)$. On peut alors poser 
+On note à présent $m = \lfloor n/2 \rfloor$ et d'après l'hypothèse de récurrence pour tout $k \in \{1, \dots, m\}$ il existe un polynôme $T_{n-2k}(X)$ tel que $T_{n - 2k}(\cos(\omega)) = \cos((n - 2k)\omega)$. On peut alors poser
 \[
- T_n(X) = X^n - \sum_{k=1}^m 2^{(n-1)} \widetilde{h_k^n} T_{n-2k}(X)
+ T_n(X) = 2^{(n-1)} X^n - \sum_{k=1}^m  \widetilde{h_k^n} T_{n-2k}(X).
 \]
-où l'on a noté $\widetilde{h_k^n} = \begin{cases}
-                                 (h_k^n)^{-1}, &\quad h_k^n \neq 0 \\
-                                 0, &\quad h_k^n = 0
-                                \end{cases}$.
+où on a noté $\widetilde{h_k^n} = \begin{cases}
+                                   0 \quad \textnormal{si } h_k^n = 0 \\
+                                   \frac{1}{h_k^n} \quad \textnormal{sinon}
+                                  \end{cases}$.
 
 Pour l'unicité, si on suppose qu'il existe un autre polynôme $R_n(X)$ vérifiant que $R_n(\cos(\omega)) = \cos(n\omega)$. Alors pour tout $\omega \in [0,2\pi]$ $\cos(\omega)$ est une racine du polynôme $T_n - R_n$ ce qui implique $T_n - R_n = 0$.
 
 \subsection{Question 2}
 
-On montre que $T_{n + 2}(x) + T_n(x) = 2xT_{n+1}(x)$. Pour cela on a 
+\paragraph{a.} On montre que $T_{n + 2}(x) + T_n(x) = 2xT_{n+1}(x)$. Pour cela on a
 \begin{align*}
  T_{n + 2}(cos(\omega)) + T_n(\cos(\omega)) &= \cos((n+2)\omega) + \cos(n\omega) \\
  &= \frac{e^{i((n+2)\omega)} + e^{-i((n+2)\omega)} + e^{in\omega} + e^{in\omega}}{2} \\
@@ -285,7 +285,72 @@ On montre que $T_{n + 2}(x) + T_n(x) = 2xT_{n+1}(x)$. Pour cela on a
 \end{align*}
 Comme de plus $\cos$ est une bijection de $[0,2\pi]$ dans $[-1,1]$ on a montré que pour tout $x \in [-1,1]$ on a $T_{n + 2}(x) + T_n(x) = 2xT_{n+1}(x)$.
 
+\paragraph{b.} La relation $T_n(\cos(x)) = \cos(nx)$ nous donne nécessairement $T_0(x) = 1$ et $T_1 (x) = x$. En utilisant la question \emph{a.} on trouve alors 
+\begin{align*}
+ T_2(x) &= 2x T_1(x) - T_0(x) = 2x^2 - 1 \\
+ T_3(x) &= 2xT_2(x) - T_1(x) = 2x(2x^2 -1) - x = 4x^3 - 3x.
+\end{align*}
+
+\paragraph{c.} On montre que pour tout $n \geq 2$ et pour tout $x \in [-1,1]$ on a 
+\begin{equation}\label{eq:eq1}
+ 2 T_n(x) = \frac{1}{n+1} T_{n+1}'(x) - \frac{1}{n-1}T_{n-1}'(x).
+\end{equation}
+
+
+On a 
+\begin{align*}
+ T_{n+1}' &= \frac{n+1}{\sqrt{1-x^2}}\sin((n-1)\arccos(c)) \quad \textnormal{et} \\
+ T_{n-1}'(x) &= \frac{n-1}{\sqrt{1 - x^2}}\sin((n-1)\arccos(x)),
+\end{align*}
+on a donc 
+\begin{align*}
+ \frac{1}{n+1}T_{n+1}'(x) &- \frac{1}{n-1}T_{n-1}'(x) = \frac{1}{\sqrt{1-x^2}} \left[ \sin((n+1)\arccos(x)) - \sin((n-1)\arccos(x)) \right ] \\
+ &= \frac{1}{\sqrt{1-x^2}}  [ \sin(n \arccos(x))x + \sqrt{1-x^2} \cos(n\arccos(x)) \\ & \quad - \sin(n\arccos(x))x + \sqrt{1-x^2} \cos(n\arccos(x))  ] \\
+ &= 2 \cos (n\arccos(x)) = 2 T_n(x)
+\end{align*}
+Ce qui montre la relation \eqref{eq:eq1}.
+
+\paragraph{d.} On montre les deux affirmations simultanément par récurrence. On vérifie facilement que l'on a $T_1'(x) = 1 = T_0(x) = 2\sum^\star T_k(x)$, $T_2'(x) = 4x = 4T_1(x) = 4 \sum^\star T_k$ et $T_2''(x) = 4 = 8 \sum^\star T_k$, ce qui initialise la récurrence.
+
+On suppose à présent $n>2$ et que le résultat est vrai pour tout $k<n$. On a alors 
+\begin{align*}
+ 2 T_{n-1}(x) &= \frac{1}{n} T_n'(x) - \frac{1}{n-2}T_{n-2}(x), \quad \textnormal{alors} \\
+  \frac{1}{n} T_n'(x) &= 2T_{n-1}(x) + \frac{1}{n-2}T_{n-2}(x), \quad \textnormal{ce qui donne} \\ 
+ T_n'(x) &= 2nT_{n-1}(x) + \frac{n}{n-2}T_{n-2}'(x) \\
+ &= 2n T_{n-1}(x) + \frac{n}{n-2}\ 2(n-2) \sum_{k=0}^{n-3} \phantom{}^\star T_k \\
+ &= 2n \sum_{k=0}^{n-1} \phantom{}^\star T_k(x).
+\end{align*}
+
+A noter que l'on a inclus la condition de parité dans la définition du symbole $\sum^\star$. On a donc montré la première relation. Pour la seconde on a 
+
+Pour la seconde relation on a 
+\begin{align*}
+ T_n''(x) &= 2n T_{n-1}'(x) + \frac{n}{n-2} T_{n-2}''(x) \\
+ &= 4n(n-1) \sum_{k=0}^{n-2} \phantom{}^\star T_k(x) + n \sum_{k=0}^{n-4} \phantom{}^\star ((n-4)^2 - k^2) T_k(x) \\
+ &= n \left [ 4(n-1) \sum_{k=0}^{n-2} \phantom{}^\star T_k(x) + \sum_{k=0}^{n-4} \phantom{}^\star ((n-2)^2 - k^2) T_k(x) \right ] \\
+ &= n \left [ (4n-4) T_{n-2}(x) + \sum_{k=0}^{n-4} \phantom{}^\star (4(n-1) + (n-2)^2 - k^2) T_k(x) \right ] \\
+ &= n \left [ (n^2 - (n-2)^2) T_{n-2}(x) + \sum_{k=0}^{n-4} \phantom{}^\star (n^2 - k^2) T_k(x) \right ] \\
+ &= n \sum_{k=0}^{n-2} \phantom{}^\star (n^2 - k^2)T_k(x).
+\end{align*}
+Ce qu'il fallait montrer.
+
+\subsection{Question 3}
+
+\paragraph{a.} Pour tout $n$ on a $T_n(\cos(x)) = \cos(nx)$. Alors en posant $\theta_k = \frac{2k + 1}{2n}\pi$ pour $k \in \{0, \dots, n-1\}$ on a $\cos(n \theta_k) = \cos \left ( \frac{(2k+1)\pi}{2}\right) = 0$ et donc $T_n(\cos(\theta_k)) = 0$. Alors la famille $\{\cos(\theta_k)\}_{k \in \{0, \dots, n-1\}}$ donne $n$ racines distinctes de $\widetilde{T_n} = 2^{-(n-1)} T_n$ qui est unitaire. Par le théorème fondamentale de l'algèbre on sait qu'il ne peut pas exister d'autre racine du polynôme $\widetilde{T_n}$ et on a de plus la factorisation
+\[
+ T_n(x) = 2^{n-1}\prod_{k=0}^{n-1}(x - \cos(\theta_k)).
+\]
+
+\paragraph{b.} A partir de la relation $T_{n+2}(x) = 2xT_{n+1}(x) - T_n(x)$ on trouve facilement que $T_n(1) = 1$ et $T_n(-1) = (-1)^n$. De plus on avait déjà que le coefficient dominant était $2^{n-1}$.
+
+\subsection{Question 4}
+
+On a 
+\begin{align*}
+ \scalaire{T_n}{T_m}_\omega &= \int_{-1}^1 \frac{T_n(x) T_m(x)}{\sqrt{1 - x^2}}\ dx  = \int_{-\pi}^{\pi} T_n(\cos(\xi)) T_m(\cos(\xi))\ d\xi \\
+ &= \int_{-\pi}^{\pi} \cos(n\xi)\cos(m\xi)\ d\xi = \delta_{n,m}.
+\end{align*}
+Ce qui montre que la famille est orthogonale pour le produit scalaire $\scalaire{\cdot}{\cdot}_\omega$. De plus la famille est constituée de $n+1$ polynômes indépendants (car de degrés différents) dans un espace de dimension $n+1$. Il s'agit donc bien d'une base orthogonale.
+
+
 \end{document}
-
-
-
