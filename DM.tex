@@ -49,7 +49,7 @@
 \newcommand{\scalaire}[2]{\left \langle {#1},\ {#2} \right \rangle}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\R}{\mathbb{R}}
-
+\newcommand{\scalaireo}[2]{\left \langle {#1},\ {#2} \right \rangle_{\omega}}
 
 
 
@@ -347,10 +347,160 @@ Ce qu'il fallait montrer.
 
 On a 
 \begin{align*}
- \scalaire{T_n}{T_m}_\omega &= \int_{-1}^1 \frac{T_n(x) T_m(x)}{\sqrt{1 - x^2}}\ dx  = \int_{-\pi}^{\pi} T_n(\cos(\xi)) T_m(\cos(\xi))\ d\xi \\
- &= \int_{-\pi}^{\pi} \cos(n\xi)\cos(m\xi)\ d\xi = \delta_{n,m}.
+ \scalaire{T_n}{T_m}_\omega &= \int_{-1}^1 \frac{T_n(x) T_m(x)}{\sqrt{1 - x^2}}\ dx  = \int_{0}^{\pi} T_n(\cos(\xi)) T_m(\cos(\xi))\ d\xi \\
+ &= \int_{0}^{\pi} \cos(n\xi)\cos(m\xi)\ d\xi = \begin{cases}
+                                                 \pi \quad \textnormal{si } n=m = 0 \\
+                                                 \frac{\pi}{2} \quad \textnormal{si } n=m \neq 0 \\
+                                                 0 \quad \textnormal{ sinon}
+                                                \end{cases}.
 \end{align*}
 Ce qui montre que la famille est orthogonale pour le produit scalaire $\scalaire{\cdot}{\cdot}_\omega$. De plus la famille est constituée de $n+1$ polynômes indépendants (car de degrés différents) dans un espace de dimension $n+1$. Il s'agit donc bien d'une base orthogonale.
+
+
+\section{Système linéaire issu de la méthode des résidus pondérés}
+
+On considère le problème : trouver une fonction $u$ telle que 
+\begin{align*}
+ - \alpha u''(x) + \gamma u(x) &= f(x) \quad \forall x \in ]-1,1[, \\
+ u(-1) = u(1) &= 0.
+\end{align*}
+
+Pour tout $k \in \N$ on désigne pas $\phi_k$ la fonction définie sur $]-1,1[$ par 
+\begin{align*}
+ \phi_k(x) = \begin{cases}
+              T_{k+2}(x) - T_0(x) \quad \textnormal{si $k$ est pair},\\
+              T_{k+2}(x) - T_1(x) \quad \textnormal{si $k$ est impair}
+             \end{cases}.
+\end{align*}
+
+
+
+\subsection{Question 1}
+
+On montre que la famille $\Phi = \{ \phi_0, \dots, \phi_{N-2}\}$ est une base de l'espace vectoriel 
+\[
+ V_N = \{v \in \R_N[X] : v(-1) = v(1) = 0 \}.
+\]
+
+$V_N$ est un sous-espace de l'espace vectoriel des polynômes de degrés compris entre $2$ et $N$, en effet un polynôme de $V_N$ dont admettre au moins deux racines. Cet espace est donc de dimension au plus $N-1$. Or la famille $\Phi$ contient $N-1$ polynômes linéairement indépendants de $V_N$, car ils sont tous de degrés différents et que $\phi_k(1) = \phi_k(-1) = 0$ d'après la question 2.3.b, elle est donc libre maximale dans $V_N$, c'est donc une base de $V_N$.
+
+\subsection{Question 2}
+
+On a l'opérateur différentiel $ \mathcal{L}u = -\alpha u'' + \gamma u$. On cherche $\widehat{u_N} \in V_N$ tel que pour tout $v_N \in V_N$ on ait
+\[
+ \scalaireo{\mathcal{L}[\widehat{u_N}]}{v_N} = \scalaireo{f}{v_N}.
+\]
+
+Ce qui revient à 
+\[
+ \int_{-1}^{1} \frac{(- (\alpha \widehat{u_N}')' + \gamma \widehat{u_N})v_N}{\sqrt{1 - x^2}}\ dx = \int_{-1}^1 \frac{f v_N}{\sqrt{1 - x^2}},
+\]
+or comme la fonction $x \mapsto \frac{1}{\sqrt{1 - x^2}}$ est une fonction strictement positive sur $]-1,1[$, cela revient à 
+\[
+ \int_{-1}^1 - (\alpha \widehat{u_N}')'v_N\ dx + \int_{-1}^1 \gamma \widehat{u_N}v_N \ dx = \int_{-1}^1 f v_N \ dx
+\]
+et en intégrant par partie on trouve 
+\[
+ \int_{-1}^1 \alpha \widehat{u_N}'v_N\ dx + \int_{-1}^1 \gamma \widehat{u_N}v_N \ dx = \int_{-1}^1 f v_N \ dx
+\]
+car $v_N(-1) = v_N(1) = 0$. On retrouve bien une formulation variationnelle exprimée dans un espace vectoriel de dimension finie. D'où le parallèle avec la méthode de Galerkine.
+
+\subsection{Question 3}
+On commence par utiliser la question 2.4 pour déterminer la valeur de $\scalaireo{\phi_l}{\phi_k}$. 
+\begin{itemize}
+ \item Si $k = l$ est pair, on a 
+ \[
+  \scalaireo{\phi_k}{\phi_k} = \scalaireo{T_{k+2}}{T_{k+2}} + \scalaireo{T_0}{T_0} = \frac{\pi}{2} + \pi  = \frac{3\pi}{2}.
+ \]
+ 
+ \item Si $k=l$ est impaire :
+ \[
+  \scalaireo{\phi_k}{\phi_k} = \scalaireo{T_{k+2}}{T_{k+2}} + \scalaireo{T_1}{T_1} = \frac{\pi}{2} + \frac{\pi}{2}  = \pi.
+ \]
+ 
+ \item Si $k \neq l$ tous deux pairs :
+ \[
+  \scalaireo{\phi_l}{\phi_k} = \scalaireo{T_0}{T_0} = \pi.
+ \]
+ 
+ \item Si $k \neq l$ tous deux impairs :
+ \[
+  \scalaireo{\phi_l}{\phi_k} = \scalaireo{T_0}{T_0} = \frac{\pi}{2}.
+ \]
+
+ \item Enfin si $k$ et $l$ sont de parité opposée on a clairement 
+ \[
+  \scalaireo{\phi_k}{\phi_l} = 0.
+ \]
+ \end{itemize}
+ On a bien trouvé les valeurs recherchées.
+ 
+ On a de plus $\phi_k'' = T_{k+2}'' = (k+2) \sum_{i=0}^{k \star} ((k+2)^2 - i^2)T_i$. Ce qui nous permet de déterminer la valeur de $\scalaireo{\phi_l''}{\phi_k}$.
+ \begin{itemize}
+  \item Si $k$ et $l$ sont pairs et $0 \leq k \leq l-2$ on a 
+  \begin{align*}
+   \scalaireo{\phi_l''}{\phi_k} &= \scalaireo{T_{l+2}''}{T_{k+2} - T_0} = (l+2) \sum_{i=0}^{l} \phantom{}^\star ((l+2)^2 - i^2) \left ( \scalaireo{T_i}{T_{k+2}} - \scalaireo{T_i}{T_0} \right ) \\
+   &= (l+2) \left ( (l+2)^2 - (k+2)^2 \right ) \scalaireo{T_{k+2}}{T_{k+2}} - (l+2)^2 \scalaireo{\frac{T_0}{2}}{T_0} \\
+   &= (l+2) \left ( (l+2)^2 - (k+2)^2 \right ) \frac{\pi}{2} - (l+2)^2 \frac{\pi}{2} \\
+   &= -(l+2)(k+2)^2 \frac{\pi}{2}.
+  \end{align*}
+  
+  \item Si $k$ et $l$ sont pairs et $ 0 \leq l-2 < k$ :
+  \begin{align*}
+   \scalaireo{\phi_l''}{\phi_k} &= \scalaireo{T_{l+2}''}{T_{k+2} - T_0} = (l+2) \sum_{i=0}^{l} \phantom{}^\star ((l+2)^2 - i^2) \left ( \scalaireo{T_i}{T_{k+2}} - \scalaireo{T_i}{T_0} \right ) \\
+   &= -(l+2) (l+2)^2 \scalaireo{\frac{T_0}{2}}{T_0} \\
+   &= - (l+2)^3 \frac{\pi}{2}.
+  \end{align*}
+
+  \item Si $k$ et $l$ sont impairs et $0 \leq k \leq l-2$ :
+  \begin{align*}
+   \scalaireo{\phi_l''}{\phi_k} &= \scalaireo{T_{l+2}''}{T_{k+2} - T_1} = (l+2) \sum_{i=0}^{l} \phantom{}^\star ((l+2)^2 - i^2) \left ( \scalaireo{T_i}{T_{k+2}} - \scalaireo{T_i}{T_1} \right ) \\
+   &= (l+2) \left ( (l+2)^2 - (k+2)^2 \right ) \scalaireo{T_{k+2}}{T_{k+2}} - ((l+2)^2 - 1) \scalaireo{T_1}{T_1} \\
+   &= (l+2) \left ( (l+2)^2 - (k+2)^2 \right ) \frac{\pi}{2} - ((l+2)^2 - 1) \frac{\pi}{2} \\
+   &= -(l+2)((k+2)^2 + 1) \frac{\pi}{2}.
+  \end{align*}
+
+  \item  Si $k$ et $l$ sont impairs et $ 0 \leq l-2 < k$ :
+  \begin{align*}
+   \scalaireo{\phi_l''}{\phi_k} &= \scalaireo{T_{l+2}''}{T_{k+2} - T_1} = (l+2) \sum_{i=0}^{l} \phantom{}^\star ((l+2)^2 - i^2) \left ( \scalaireo{T_i}{T_{k+2}} - \scalaireo{T_i}{T_1} \right ) \\
+   &= -(l+2) ((l+2)^2 - 1) \scalaireo{T_1}{T_1} \\
+   &= -(l+2) ((l+2)^2 - 1) \frac{\pi}{2}.
+  \end{align*}
+
+  \item Enfin il est facile de voir que si $k$ $l$ sont de parité opposée on a $\scalaireo{\phi_l''}{\phi_k} = 0$.
+ \end{itemize}
+ 
+ \subsection{Question 4}
+ On considère une fonction $f \in L^2([-1,1])$, on s'intéresse à $\scalaireo{f}{T_n}$.
+ 
+ \paragraph{a.} On a 
+ \begin{align*}
+  \scalaireo{f}{T_n} &= \int_{-1}^1 \frac{f(x)T_n(x)}{\sqrt{1 - x^2}}\ dx = \int_0^\pi \frac{f(\cos(t))T_n(\cos(t))}{\sqrt{1 - \cos^2(t)}} \sin(t)\ dt \\ 
+  &= \int_0^\pi f(\cos(t))\cos(nt)\ dt = \frac{1}{2} \int_0^{2\pi} f(\cos(t))\cos(nt)\ dt.
+ \end{align*}
+ Où l'on a commencé par faire le changement de variable $x = \cos(t)$ puis on a utilisé la parité de la fonction $t \mapsto \cos(t)$.
+ 
+ \paragraph{b.} La méthode des rectangles donne 
+ \begin{align*}
+  I_n &= \frac{2\pi}{2(N+1)} \sum_{j=0}^N f\left(\cos\left(\frac{2j\pi}{N+1}\right) \right) \cos \left (\frac{n 2 \pi j}{N+1} \right ) \\
+  &= \frac{\pi}{N+1} \sum_{j=0}^N f \left ( \cos \left (\frac{2j\pi}{N+1} \right) \right ) \Re \left [e^{-i \frac{2n\pi j}{N+1}} \right ]\\
+  &= \frac{\pi}{N+1} \sum_{j=0}^N w_j \Re \left[e^{-2i\pi \frac{nj}{N+1}} \right ] \\
+  &= \frac{\pi}{N+1} \Re \left [ \sum_{j=0}^N w_j e^{-2i\pi \frac{nj}{N+1}} \right ].
+ \end{align*}
+
+ \paragraph{c.} Dans le cas pair on a 
+ \begin{align*}
+  \scalaireo{f}{\phi_n} &= \scalaireo{f}{T_{n+2}} - \scalaireo{f}{T_0} \\
+  &= \frac{\pi}{N+1} \Re \left [ \sum_{j=0}^N w_j \left ( e^{-2i\pi \frac{(n+2)j}{N+1}} - 1 \right) \right ].
+ \end{align*}
+ 
+ Dans le cas impaire on a 
+\begin{align*}
+ \scalaireo{f}{\phi_n} &= \scalaireo{f}{T_{n+2}} - \scalaireo{f}{T_1} \\
+  &= \frac{\pi}{N+1} \Re \left [ \sum_{j=0}^N w_j  e^{-2i\pi \frac{j}{N+1}}\left ( e^{n+2} -1 \right ) \right ].
+\end{align*}
+
+
 
 
 \end{document}

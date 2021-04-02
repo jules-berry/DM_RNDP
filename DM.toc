@@ -16,3 +16,11 @@
 \contentsline {paragraph}{a.}{9}{section*.6}%
 \contentsline {paragraph}{b.}{9}{section*.7}%
 \contentsline {subsection}{\numberline {2.4}Question 4}{9}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Système linéaire issu de la méthode des résidus pondérés}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Question 1}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Question 2}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Question 3}{11}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Question 4}{12}{subsection.3.4}%
+\contentsline {paragraph}{a.}{13}{section*.8}%
+\contentsline {paragraph}{b.}{13}{section*.9}%
+\contentsline {paragraph}{c.}{13}{section*.10}%
