@@ -501,6 +501,25 @@ On commence par utiliser la question 2.4 pour déterminer la valeur de $\scalair
 \end{align*}
 
 
+\section{Méthode de Gauss}
+
+\subsection{Question 1}
+
+Pour chaque ligne $j > 1$, et en partant la dernière ligne $j = n$, l'idée est de soustraire la ligne $j-1$ à la ligne $j$. La structure particulière de la matrice nous permet de ne pas réaliser la totalité des calculs. Pour chaque ligne $j$ on peut directement fixer les $j-2$ premiers coefficients à $0$ et il ne reste plus qu'à réaliser $n - j +2$ soustractions. Cette méthode donne une matrice de la forme souhaitée en réalisant $\sum_{k=1}^n (n - k + 2) = \sum_{k=0}^{n-1} (k + 2) \sim n^2/2$ soustractions.
+
+\subsection{Question 2}
+
+Pour chaque colonne $c_k$ pour $k>1$ et en partant de la colonne la plus à droite $k = n$, on élimine le coefficient $\hat {b}_{k-1}$ en calculant
+\[
+ c_{k-1} = c_{k-1} - \frac{\hat {b}_{k-1}}{\hat{a}_{k,k}} c_k.
+\]
+Ce qui donne lieu à $3n(n-1)$ opérations. On obtient alors un matrice triangulaire supérieure qui nous permet de résoudre le système linéaire en $n^2$ opérations comme dans le cas de la méthode de Gauss classique. Au final on a donc bien résolu le système linéaire avec un algorithme demandant de l'ordre de $n^2$ opérations.
+
+\begin{remarque}
+ Il faut remarquer que nous avons fait l'hypothèse que le coefficients diagonaux restaient non-nuls tout au long de la procédure.
+\end{remarque}
+
+
 
 
 \end{document}

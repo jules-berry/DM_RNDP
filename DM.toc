@@ -24,3 +24,6 @@
 \contentsline {paragraph}{a.}{13}{section*.8}%
 \contentsline {paragraph}{b.}{13}{section*.9}%
 \contentsline {paragraph}{c.}{13}{section*.10}%
+\contentsline {section}{\numberline {4}Méthode de Gauss}{13}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Question 1}{13}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Question 2}{14}{subsection.4.2}%
