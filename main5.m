@@ -37,12 +37,12 @@ coefs = zeros(1,length(N));
 errs = zeros(1,length(N));
 for i=[1:length(N)]
   coefs(i) = scwft(fcos,5,N(i));
-  errs(i) = abs(-2*pi/36-coefs(i));
+  errs(i) = abs(-2*pi/25-coefs(i))/(2*pi/25);
 endfor
 
 figure;
 plot(N,errs);
-title("Erreurs");
+title("Erreur relative");
 xlabel("N");
 ylabel("Erreur");
 
