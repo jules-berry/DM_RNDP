@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.30)  9 APR 2021 11:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.30)  14 APR 2021 18:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -886,21 +886,21 @@ Overfull \hbox (10.70132pt too wide) detected at line 468
  []
 
 [12] [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 525.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 535.
  [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 525.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 535.
  (./DM.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 525.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 525.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 535.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 535.
 Package rerunfilecheck Info: File `DM.out' has not changed.
-(rerunfilecheck)             Checksum: 0766A2131AF4875745081AE9B8B57983;1170.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 525.
+(rerunfilecheck)             Checksum: AA365C104E2DC144D4322F82CD639421;1235.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 535.
  ) 
 Here is how much of TeX's memory you used:
- 11538 strings out of 481239
- 170133 string characters out of 5920377
+ 11541 strings out of 481239
+ 170164 string characters out of 5920377
  461830 words of memory out of 5000000
- 26485 multiletter control sequences out of 15000+600000
+ 26486 multiletter control sequences out of 15000+600000
  635521 words of font info for 143 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,19n,42p,904b,503s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -913,10 +913,10 @@ e1/public/fourier/fourier-mlit.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/fourier/fourier-ms.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/u
 topia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on DM.pdf (14 pages, 116483 bytes).
+Output written on DM.pdf (14 pages, 119669 bytes).
 PDF statistics:
- 239 PDF objects out of 1000 (max. 8388607)
- 211 compressed objects within 3 object streams
- 51 named destinations out of 1000 (max. 500000)
- 153 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 245 PDF objects out of 1000 (max. 8388607)
+ 217 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
