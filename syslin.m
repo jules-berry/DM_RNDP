@@ -31,10 +31,10 @@ function [M1,M2,G1,G2] = syslin(alpha,gamma,f,N)
         endif
       endif
     endfor
-    F(l+1) = scwft(f,l,80);
+    F(l+1) = pswft(f,l,80);
   endfor
-  A = alpha.* B - gamma .* A;
-  display(["A = "; num2str(A)]);
+  A = -alpha* B + gamma * A;
+  %display(["A = "; num2str(A)]);
   % On modifie à présent le système pour prendre en compte la parité
   K = floor(N/2);
   M1 = zeros(K,K);

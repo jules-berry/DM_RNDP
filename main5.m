@@ -24,8 +24,8 @@ for i=0:J
 endfor
 figure();
 hold on;
-plot(0:J,res,"DisplayName","Coefs calculés");
-plot(0:J,coefs_reels,"DisplayName","Coefs réels");
+plot(0:J,res,"DisplayName","Coefs calculï¿½s");
+plot(0:J,coefs_reels,"DisplayName","Coefs rï¿½els");
 xlabel("n");
 ylabel("pswft(fcos,n)");
 title("Calcul des produits scalaires");
@@ -68,5 +68,5 @@ for n=0:N
   tint(n+1)=te-ts;
 endfor
 
-disp(["temps total de calcul par transformée de fourier : ",num2str(sum(tft))," s"]);
+disp(["temps total de calcul par transformï¿½e de fourier : ",num2str(sum(tft))," s"]);
 disp(["temps total de calcul par integration numerique : ",num2str(sum(tint))," s"]);
