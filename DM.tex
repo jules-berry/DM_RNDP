@@ -519,7 +519,17 @@ Ce qui donne lieu à $3n(n-1)$ opérations. On obtient alors un matrice triangul
  Il faut remarquer que nous avons fait l'hypothèse que le coefficients diagonaux restaient non-nuls tout au long de la procédure.
 \end{remarque}
 
+\section{Mise en œuvre numérique}
 
+\paragraph{1)} On sait déjà que l'on a le système linéaire $AU = F$ où $A = (a_{i,j})_{0 \leq i,j \leq N-2}$ et $a_{i,j} = 0$ dès que $i$ et $j$ sont de parité oppposée. De plus en notant $F = (f_i)_{0 \leq i \leq N-2}$ on a avec les conventions de l'énoncé
+\[
+ f_i = \sum_{k = 0}^K (\alpha \scalaire{\phi_{2k}''}{\phi_i} - \gamma \scalaire{\phi_{2k}}{\phi_i})u_{2k}
+\]
+lorsque $i$ est pair et 
+\[
+ f_i = \sum_{k=0}^K (\alpha \scalaire{\phi_{2k+1}''}{\phi_i} - \gamma \scalaire{\phi_{2k+1}}{\phi_i})u_{2k+1}
+\]
+lorsque $i$ est impair. Alors en notant $G = \begin{pmatrix} G^1 \\ G^2                         \end{pmatrix}$ avec $G^1 = \begin{pmatrix}f_0 \\ f_2 \\ \vdots \\ f_{2K} \end{pmatrix}$ et $G^2 = \begin{pmatrix}f_1 \\ f_3 \\ \vdots \\ f_{2K+1} \end{pmatrix}$. On trouve bien un système équivalent $MV = G$ où $M$ est de la forme souhaitée.
 
 
 \end{document}
