@@ -4,13 +4,15 @@ clear; clc; close all;
 
 p=1; n=6; N=255;
 fcos = @(t) ((t.^p).*((2*pi.-t)).^p);
-%tracï¿½ de fcos
+
+%%% Trace de fcos
+
 figure();
-fplot(fcos, [0, 2*pi]);
+fplot(fcos, [0, 2*pi], "DisplayName", "fcos");
 xlabel("tet");
 ylabel("f(cos(tet))");
 title(["Trace de fcos pour p=",num2str(p)]);
-J = 20
+J = 20;
 res=zeros(1,J);
 K = 1:J;
 coefs_reels = -2*pi./(K.^2);
@@ -22,8 +24,8 @@ for i=0:J
 endfor
 figure();
 hold on;
-plot(0:J,res,"DisplayName","Coefs calculÃ©s");
-plot(0:J,coefs_reels,"DisplayName","Coefs rÃ©els");
+plot(0:J,res,"DisplayName","Coefs calculés");
+plot(0:J,coefs_reels,"DisplayName","Coefs réels");
 xlabel("n");
 ylabel("pswft(fcos,n)");
 title("Calcul des produits scalaires");
@@ -41,13 +43,30 @@ for i=[1:length(N)]
 endfor
 
 figure;
-plot(N,errs);
+plot(N,log(errs));
 title("Erreur relative");
 xlabel("N");
 ylabel("Erreur");
 
 %%% Temps de calcul compare a une methode d'integration naive
 
-p=4; n=5; N=255;
-fcos = @(tet) (tet.^p).*((2*pi.-tet).^p);
-g=@(x) fcos(x).*cos(n*x);
+p=4; N=255;
+tft=[];
+tint=[];
+Iint=[];
+Ifft=[];
+for n=0:N
+  fcos = @(tet) (tet.^p).*((2*pi.-tet).^p);
+  ts=cputime;
+  Ifft(n+1)=scwft(fcos,n,N);
+  te=cputime;
+  tft(n+1)=te-ts;
+  fun=@(x) fcos(x).*cos(n.*x);
+  ts=cputime;
+  Iint(n+1)=integral(fun,0,2*pi)/2;
+  te=cputime;
+  tint(n+1)=te-ts;
+endfor
+
+disp(["temps total de calcul par transformée de fourier : ",num2str(sum(tft))," s"]);
+disp(["temps total de calcul par integration numerique : ",num2str(sum(tint))," s"]);
