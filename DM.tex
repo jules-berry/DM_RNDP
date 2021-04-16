@@ -501,6 +501,62 @@ On commence par utiliser la question 2.4 pour déterminer la valeur de $\scalair
 \end{align*}
 
 
+\section{Transform\'ee de Fourier rapide}
+
+\subsection{Question 2.a}
+
+Soit p et n deux entiers naturels tels que $p > 0$. On calcule les valeurs exactes des int\'egrales de la mani\`ere suivante : (on suppose premi\`erement n strictement positif)
+
+\begin{align*}
+ \langle f,T_n \rangle _\omega &= \frac{1}{2} \int_0^{2\pi} f(\cos(t))\cos(nt)\ dt
+ = \frac{1}{2} \int_0^{2\pi} t^p (2\pi - t)^p\cos(nt)\ dt\\
+ &= \frac{1}{2} \int_0^{2\pi} \left[t (2\pi - t)\right]^p\cos(nt)\ dt
+\end{align*}
+
+On effetue une IPP avec $u=\left[t (2\pi - t)\right]^p$ et $v'=\cos(nt)$.\\
+On a donc $u'=2p(pi-t)\left[t (2\pi - t)\right]^(p-1)$ et $v=\frac{1}{n} \sin(nt)$. Ainsi :
+
+\begin{align*}
+ \langle f,T_n \rangle _\omega &= \frac{1}{2} \left[ \left[t (2\pi - t)\right]^p \frac{1}{n} \sin(nt) \right]_0 ^{2\pi} + \frac{1}{2} \int_0^{2\pi}  \frac{1}{n} 2p(pi-t)\left[t (2\pi - t)\right]^{p-1} \sin(nt) \ dt \\
+ &= \frac{p}{n} \int_0^{2\pi} (pi-t)\left[t (2\pi - t)\right]^{p-1} \sin(nt) \ dt
+\end{align*}
+
+Dans le cas ou p=1, on a alors :
+
+\begin{align*}
+ \langle f,T_0 \rangle _\omega &=  \frac{1}{n} \int_0^{2\pi} (pi-t) \sin(nt) \ dt\\
+ &=\frac{1}{n^2} \left[(\pi -t)  \cos(nt) \right]_0 ^{2\pi} + \frac{1}{n^2} \int_0^{2\pi} \cos(nt) \ dt\\
+ &= - \frac{\pi}{n^2} + \frac{1}{n^3} \int_0^{2\pi n} \cos(\phi) \ d\phi\\
+ &= - \frac{\pi}{n^2}
+\end{align*}
+
+Lorsque n=0, on a a :
+\begin{align*}
+ \langle f,T_n \rangle _\omega &=  \frac{1}{2} \int_0^{2\pi} f(\cos(t))\ dt
+ =\frac{1}{2} \int_0^{2\pi} t^p (2\pi - t)^p \ dt 
+ =\frac{1}{2} \int_0^{2\pi} \left( 2 \pi t - t^2 \right)^p \ dt\\
+ &= \frac{1}{2} \int_0^{2\pi} \left( 2 \pi t - t^2 \right) \ dt
+ = \left[\pi t^2 - \frac{t^3}{3}  \right]_0 ^{2\pi}
+ = \frac{2 \pi^3}{3}
+\end{align*}
+
+Dans le cas ou p=4, on a :
+\begin{align*}
+ \langle f,T_n \rangle _\omega &= \frac{p}{n} \int_0^{2\pi} (pi-t)\left[t (2\pi - t)\right]^{3} \sin(nt) \ dt
+\end{align*}
+
+Lorsque n=0, on a a :
+\begin{align*}
+ \langle f,T_0 \rangle _\omega &=  \frac{1}{2} \int_0^{2\pi} f(\cos(t))\ dt
+ =\frac{1}{2} \int_0^{2\pi} t^4 (2\pi - t)^4 \ dt 
+ =\frac{1}{2} \int_0^{2\pi} \left( 2 \pi t - t^2 \right)^4 \ dt\\
+\end{align*}
+
+\subsection{Question 2.c}
+
+
+
+
 \section{Méthode de Gauss}
 
 \subsection{Question 1}
