@@ -8,7 +8,7 @@ function [M1,M2,G1,G2] = syslin(alpha,gamma,f,N)
       if mod(l,2) == mod(k,2)
         if mod(l,2) == 0
           if l==k
-            A(l+1,k+1) += 3*pi/3;
+            A(l+1,k+1) += 3*pi/2;
           else 
             A(l+1,k+1) += pi;
           endif
@@ -31,7 +31,7 @@ function [M1,M2,G1,G2] = syslin(alpha,gamma,f,N)
         endif
       endif
     endfor
-    F(l+1) = pswft(f,l,80);
+    F(l+1) = pswft2(f,l+2,200) - pswft2(f,mod(l,2),200);
   endfor
   A = -alpha* B + gamma * A;
   %display(["A = "; num2str(A)]);

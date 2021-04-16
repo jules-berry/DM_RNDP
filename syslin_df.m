@@ -16,3 +16,4 @@ A=spdiags(B,[-1,0,1],J-1,J-1);
 F=transpose(f(x));
 F(1)=f(x(1))+u0/h^2;
 F(J-1)=f(x(J-1))+u1/h^2;
+F= transpose(F);

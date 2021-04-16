@@ -1,7 +1,7 @@
 function I=pswft(f,N)
   
   % f : fonction dont on veut calculer le produit scalaire avec les polyomes de Tchebychev
-  % N : nombre de produits scalaires calculés
+  % N : nombre de produits scalaires calculÃ©s
   %
   % I : vecteur contenant les valeurs successives des produits scalaires
  
