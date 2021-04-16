@@ -3,6 +3,8 @@ function [M1,M2,G1,G2] = syslin(alpha,gamma,f,N)
   A = zeros(N,N);
   B = zeros(N,N);
   F = zeros(N,1);
+  ps = pswft2(f,max(80,N+2));
+  display(num2str(size(ps)));
   for l = [0:N-1]
     for k = [0:N-1]
       if mod(l,2) == mod(k,2)
@@ -31,7 +33,13 @@ function [M1,M2,G1,G2] = syslin(alpha,gamma,f,N)
         endif
       endif
     endfor
-    F(l+1) = pswft2(f,l+2,200) - pswft2(f,mod(l,2),200);
+    %F(l+1) = pswft(f,l+2,200) - pswft2(f,mod(l,2),200);
+    F(l+1) = ps(l+3) - ps(mod(l,2)+1);
+    j = mod(l,2);
+    Tl = @(t)(cos((l+2)*t));
+    Tj = @(t)(cos(j*t));
+    norm_l = (pswft(Tl,max(80,N+3))(l+3) + pswft(Tj,max(80,N+3))(j+1));
+    F(l+1)/= norm_l;
   endfor
   A = -alpha* B + gamma * A;
   %display(["A = "; num2str(A)]);

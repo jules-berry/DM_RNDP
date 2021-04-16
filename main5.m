@@ -18,15 +18,17 @@ res=zeros(1,J);
 K = 1:J;
 coefs_reels = -2*pi./(K.^2);
 coefs_reels = [2*pi**3/3,coefs_reels];
+ps = pswft(fcos,N);
+display(num2str(size(ps)));
 %resint=[];
 for i=0:J
-  res(i+1)=pswft(fcos,N)(i+1);
+  res(i+1)=ps(i+1);
 endfor
 
 figure();
 hold on;
-plot(0:J,res,"DisplayName","Coefs calculés");
-plot(0:J,coefs_reels,"DisplayName","Coefs réels");
+plot(0:J,res,"DisplayName","Coefs calculï¿½s");
+plot(0:J,coefs_reels,"DisplayName","Coefs rï¿½els");
 xlabel("n");
 ylabel("pswft(fcos,n)");
 title("Calcul des produits scalaires");
@@ -116,5 +118,5 @@ endfor
 te=cputime;
 tint=te-ts;
 
-disp(["temps total de calcul par transformée de fourier : ",num2str(tft)," s"]);
+disp(["temps total de calcul par transformï¿½e de fourier : ",num2str(tft)," s"]);
 disp(["temps total de calcul par integration numerique : ",num2str(tint)," s"]);
