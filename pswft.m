@@ -9,7 +9,7 @@ function I = pswft(f,n,N)
   fourier=fourier./m;
   %display(num2str(m))
   I=2*pi*fourier(1);
-  J=1:m;
+  J=1:m-1;
   
   for k=1:floor(m/2) %attention peut etre +1
     S = sum(cos(2*pi*k.*J./m));
