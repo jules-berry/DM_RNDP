@@ -38,7 +38,7 @@ function [M1,M2,G1,G2] = syslin(alpha,gamma,f,N)
     j = mod(l,2);
     Tl = @(t)(cos((l+2)*t));
     Tj = @(t)(cos(j*t));
-    norm_l = (pswft(Tl,max(80,N+3))(l+3) + pswft(Tj,max(80,N+3))(j+1));
+    norm_l = (abs(pswft(Tl,max(80,N+3))(l+3)) + abs(pswft(Tj,max(80,N+3))(j+1)));
     F(l+1)/= norm_l;
   endfor
   A = -alpha* B + gamma * A;

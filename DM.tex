@@ -21,6 +21,7 @@
 \usepackage{epstopdf}
 \usepackage[nottoc, notlof, notlot]{tocbibind}
 \usepackage{fourier}
+\usepackage{listings}
 
 %opening
 \title{DM RNDP}
@@ -233,7 +234,7 @@ La forme bilinéaire $\scalaire{\cdot}{\cdot}\omega$ est clairement symétrique 
  \scalaire{\phi}{\phi}_\omega = \int \frac{\module{\phi(x)}^2}{\sqrt{1-x^2}} \ dx \geq 0
 \end{align*}
 et on remarque que $\scalaire{\phi}{\phi}_\omega = 0$ si, et seulement si, $\phi = 0$ car $\omega$ est strictement positive sur $]-1,1[$.
-Il reste juste à monter que l'intégrale est bien définie. Or on a
+Il reste juste à montrer que l'intégrale est bien définie. Or on a
 \begin{align*}
  \module{\scalaire{\phi}{\psi}_\omega} \leq \norm{\phi}{\infty} \norm{\psi}{\infty} \int_{-1}^1 \frac{1}{\sqrt{1 - x^2}}\ dx.
 \end{align*}
@@ -272,6 +273,14 @@ où on a noté $\widetilde{h_k^n} = \begin{cases}
                                   \end{cases}$.
 
 Pour l'unicité, si on suppose qu'il existe un autre polynôme $R_n(X)$ vérifiant que $R_n(\cos(\omega)) = \cos(n\omega)$. Alors pour tout $\omega \in [0,2\pi]$ $\cos(\omega)$ est une racine du polynôme $T_n - R_n$ ce qui implique $T_n - R_n = 0$.
+
+\begin{figure}
+ \centering
+ \includegraphics[width=0.8\textwidth]{tchebychev.png}
+ \caption{Premiers polynômes de Tchebychev}
+\end{figure}
+
+
 
 \subsection{Question 2}
 
@@ -355,6 +364,124 @@ On a
                                                 \end{cases}.
 \end{align*}
 Ce qui montre que la famille est orthogonale pour le produit scalaire $\scalaire{\cdot}{\cdot}_\omega$. De plus la famille est constituée de $n+1$ polynômes indépendants (car de degrés différents) dans un espace de dimension $n+1$. Il s'agit donc bien d'une base orthogonale.
+
+\section{Méthode des rectangles pour l’approximation de l’intégrale d’une fonction périodique sur un intervalle de période}
+
+On rappelle ici le r\'esultat suivant (utilis\'e \`a plusieurs reprises par la suite) :
+En consid\'erant une fonction $f$ de $\mathbb{R}$ dans $\mathbb{R}$, p\'eriodique de p\'eriode $2 \pi$ assez r\'eguli\`ere. Alors la s\'erie de fourier associ\'ee \`a $f$, not\'ee $S_Nf$ converge normalement (et donc uniform\'ement) vers $f$ sur $[0, 2\pi]$ lorsque $N$ tend vers l'infini
+
+\subsection{Question 1}
+
+Soient $n$ et $k$ deux entiers naturels tels que $n \geq 2$ et $k \geq 2$.\\.
+On pose $k=pn+r$, avec $0 < r \leq n-1$, la division euclidienne de $k$ par $n$. Montrons que $S_{n,k} = 0$ si $r=0$ et  $S_{n,k} = n$ sinon :
+\[
+S_{n,k} = \sum_{j=0}^{n-1} \cos\left(\frac{2kj\pi}{n}\right)
+= \sum_{j=0}^{n-1} \cos\left(\frac{2pnj\pi}{n}+\frac{2rj\pi}{n}\right)
+= \sum_{j=0}^{n-1} \cos\left(2pj\pi+\frac{2rj\pi}{n} \right)
+\]
+la fonction cosinus \'etant p\'eriodique de p\'eriode $2\pi$, on a donc :
+\[
+S_{n,k} = \sum_{j=0}^{n-1} \cos\left(\frac{2rj\pi}{n} \right)
+\]
+Si $r=0$, on a directement le r\'esultat :
+\[
+S_{n,k} = \sum_{j=0}^{n-1} \cos\left(\frac{2\pi}{n} \right)
+= \sum_{j=0}^{n-1} 1
+= n
+\]
+Sinon, on utilise la formule d'Euler pour le cosinus :
+\[
+\cos(x)= \Re\left( {\mathrm  {e}}^{{{\mathrm  {i}}\,x}} \right) 
+\]
+O\`u $\Re$ d\'esigne la partie r\'elle d'un complexe.
+Ce qui nous donne :
+\[
+S_{n,k} = \sum_{j=0}^{n-1} \Re\left( {\mathrm  {e}}^{{{\mathrm  {i}}\,\frac{2rj\pi}{n}}} \right)
+=\Re\left( \sum_{j=0}^{n-1} {\mathrm  {e}}^{{{\mathrm  {i}}\,\frac{2rj\pi}{n}}} \right)
+\]
+Or, les $\mathrm{e}^{{{\mathrm  {i}}\,\frac{2rj\pi}{n}}}$ sont les n-i\`emes racines de l'unit\'e. On a donc la propri\'et\'e que leur somme vaut $0$. Ceci nous permet de conclure :
+\[
+S_{n,k} =\Re\left( \sum_{j=0}^{n-1} {\mathrm  {e}}^{{{\mathrm  {i}}\,\frac{2rj\pi}{n}}} \right)
+=\Re\left( 0 \right)
+=0
+\]
+
+\subsection{Question 2}
+\subsubsection {Partie a}
+
+Soit $\left(x_j\right)_{0 \leq j \leq n} $ une subdivision uniforme de l'intervalle $[0, \pi]$. Notons h le pas de la subdivision.\\
+On a par d\'efinition de la formule de quadrature des rectangles \`a gauche et d'apr\`es le d\'evelopppement en s\'erie de $f$ :
+\[
+I_n = \sum_{j=0}^{n-1} f(x_j) \cdot h
+= \frac{2 \pi}{n} \sum_{j=0}^{n-1} f(x_j)
+= \frac{2 \pi}{n} \sum_{j=0}^{n-1} \left( a_0 + \sum_{k=1}^{+ \infty} a_k \cos(k x_j)\right)
+\]
+Puisque la s\'erie converge, on peut intervertir les sommes :
+\[
+I_n = \frac{2 \pi}{n} \cdot n a_0 + \frac{2 \pi}{n} \sum_{k=1}^{+ \infty} \left( \sum_{j=0}^{n-1} a_k \cos(k x_j) \right)
+= 2 \pi a_0 + \frac{2 \pi}{n} \sum_{k=1}^{+ \infty} \left( a_k \sum_{j=0}^{n-1} \cos(k x_j) \right)
+\]
+En remarquant que les $x_j = \frac{2 \pi j}{n}$ on a donc :
+\[
+I_n = 2 \pi a_0 + \frac{2 \pi}{n} \sum_{k=1}^{+ \infty} \left( \sum_{j=0}^{n-1} a_k \cos\left( \frac{2 k j \pi }{n} \right) \right)
+= 2 \pi a_0 + \frac{2 \pi}{n} \sum_{k=1}^{+ \infty} a_k S_{n,k}
+\]
+Ce qui conclut cette question.
+
+\subsubsection{Partie b}
+
+Posons $I= \int_{0}^{2 \pi} f(x) dx$. On s'int\'eresse \`a l'erreur $I_n - I$. On a d'un part :
+\begin{align*}
+I = &\int_{0}^{2 \pi} f(x) = \int_{0}^{2 \pi} \sum_{k=0}^{+ \infty} a_k \cos(kx) dx
+= \int_{0}^{2 \pi} a_0 + \sum_{k=1}^{+ \infty} a_k \cos(kx) dx \\
+=& \int_{0}^{2 \pi} a_0 dx + \int_{0}^{2 \pi} \sum_{k=}^{+ \infty} a_k \cos(kx) dx
+= 2 \pi a_0 + \sum_{k=1}^{+ \infty} \int_{0}^{2 \pi} a_k \cos(kx) dx\\
+=& 2 \pi a_0 + \sum_{k=1}^{+ \infty} {\left[ \frac{\sin(kx)}{k} \right]}_0^{2\pi}
+= 2 \pi a_0 + \sum_{k=1}^{+ \infty} 0 = 2 \pi a_0 + 0 = 2 \pi a_0
+\end{align*}
+L'interversion s\'erie int\'egrale est justifi\'ee car la s\'erie de Fourier converge uniform\'ement vers $f$. \\
+D'autre part, on a par la question pr\'ec\'edente (et puisque la s\'erie converge) :
+\[
+\sum_{k=1}^{+ \infty} a_k S_{n,k} = \sum_{p=1}^{+ \infty} a_{pn} S_{n,pn}
+= \sum_{p=1}^{+ \infty} a_{pn} \cdot n
+= n \cdot \sum_{p=1}^{+ \infty} a_{pn}
+\]
+On en d\'eduit donc :
+\begin{align*}
+I_n - I =& I_n -  2 \pi a_0 = 2 \pi a_0 + \frac{2 \pi}{n} n \cdot \sum_{p=1}^{+ \infty} a_{pn} -  2 \pi a_0\\
+=& 2 \pi \sum_{p=1}^{+ \infty} a_{pn}
+\end{align*}
+Ce qui conclut.
+
+\subsubsection{Partie c}
+On s'int\'eresse au comportement de la quantit\'e $I_n-I$ lorsque n tend vers l'infini. On peut encore une fois utiliser la convergence uniforme de la s\'erie de Fourier pour l'intervertion limite-s\'erie.
+
+\begin{align*}
+\lim_{n\to\infty} I_n-I  &=  \lim_{n\to\infty} 2 \pi \sum_{p=1}^{+ \infty} a_{pn} \\
+&\leq \lim_{n\to\infty} 2 \pi  \sum_{p=1}^{+ \infty} a_{pn} \\
+&\leq \lim_{n\to\infty} 2 \pi \sum_{p=1}^{+ \infty}   a_{pn} \\
+\end{align*}
+
+On a : 
+\begin{align*}
+\lim_{n\to\infty}  I_n-I  &=2 \pi \sum_{p=1}^{+ \infty} \lim_{n\to\infty}  a_{pn}  \\
+&= 2 \pi \sum_{p=1}^{+ \infty} 0 = 0
+\end{align*}
+
+\subsection{Question 3}
+
+Supposons que $f$ est de classe $\C^q$ (et v\'erifiant les autres hypoth`eses de l'\'enonc\'e. Les $a_k$ v\'erifient donc $a_k=\frac{\alpha_k}{n^q}$, o\`u $\alpha_k$ est une suite r\'elle tendant vers $0$ lorsque $k$ tend vers l'infini.
+On a alors en particulier qu'il existe M r\'eel positif tel que : $|\alpha_k| \leq M$.\\
+Cela nous donne que quel que soient $p$ et $n$ entiers positifs, on a : $|a_{pn}| \leq \frac{M}{(pn)^q}$
+Et donc :
+\begin{align*}
+I_n - I =& 2 \pi \sum_{p=1}^{+ \infty} a_{pn}\\
+\leq& 2 \pi \sum_{p=1}^{+ \infty} \frac{M}{(pn)^q}\\
+\leq& \frac {2 \pi}{n^q}\sum_{p=1}^{+ \infty} \frac{M}{p^q}\\
+\end{align*}
+Puisque la s\'erie converge (s\'erie de Riemann) on a bien qu'il existe une constante r\'elle C telle que : $|I_n - I| \leq \frac{C}{n^q}$.
+
+On peut interpr\'eter ce r\'esultat de la mani\`ere suivant : l'ordre de convergence de la m\'ethode des rectangles pour le type de fonction que nous \'etudions (paires et p\'eriodiques sur $[0;2 \pi]$) est \'egal \`a l'ordre $q$ de la classe de r\'egulartit\'e de la fonction \'etudi\'ee.
 
 
 \section{Système linéaire issu de la méthode des résidus pondérés}
@@ -470,6 +597,12 @@ On commence par utiliser la question 2.4 pour déterminer la valeur de $\scalair
   \item Enfin il est facile de voir que si $k$ $l$ sont de parité opposée on a $\scalaireo{\phi_l''}{\phi_k} = 0$.
  \end{itemize}
  
+ \begin{figure}
+ \centering
+ \includegraphics[width=0.8\textwidth]{phi.png}
+ \caption{Premières fonction $\phi_i$}
+\end{figure}
+ 
  \subsection{Question 4}
  On considère une fonction $f \in L^2([-1,1])$, on s'intéresse à $\scalaireo{f}{T_n}$.
  
@@ -505,7 +638,7 @@ On commence par utiliser la question 2.4 pour déterminer la valeur de $\scalair
 
 \subsection{Question 2.a}
 
-Soit p et n deux entiers naturels tels que $p > 0$. On calcule les valeurs exactes des int\'egrales de la mani\`ere suivante : (on suppose premi\`erement n strictement positif)
+Soit $p$ et $n$ deux entiers naturels tels que $p > 0$. On calcule les valeurs exactes des int\'egrales de la mani\`ere suivante : (on suppose premi\`erement $n$ strictement positif)
 
 \begin{align*}
  \langle f,T_n \rangle _\omega &= \frac{1}{2} \int_0^{2\pi} f(\cos(t))\cos(nt)\ dt
@@ -517,20 +650,20 @@ On effetue une IPP avec $u=\left[t (2\pi - t)\right]^p$ et $v'=\cos(nt)$.\\
 On a donc $u'=2p(pi-t)\left[t (2\pi - t)\right]^(p-1)$ et $v=\frac{1}{n} \sin(nt)$. Ainsi :
 
 \begin{align*}
- \langle f,T_n \rangle _\omega &= \frac{1}{2} \left[ \left[t (2\pi - t)\right]^p \frac{1}{n} \sin(nt) \right]_0 ^{2\pi} + \frac{1}{2} \int_0^{2\pi}  \frac{1}{n} 2p(pi-t)\left[t (2\pi - t)\right]^{p-1} \sin(nt) \ dt \\
- &= \frac{p}{n} \int_0^{2\pi} (pi-t)\left[t (2\pi - t)\right]^{p-1} \sin(nt) \ dt
+ \langle f,T_n \rangle _\omega &= \frac{1}{2} \left[ \left[t (2\pi - t)\right]^p \frac{1}{n} \sin(nt) \right]_0 ^{2\pi} + \frac{1}{2} \int_0^{2\pi}  \frac{1}{n} 2p(\pi-t)\left[t (2\pi - t)\right]^{p-1} \sin(nt) \ dt \\
+ &= \frac{p}{n} \int_0^{2\pi} (\pi-t)\left[t (2\pi - t)\right]^{p-1} \sin(nt) \ dt
 \end{align*}
 
-Dans le cas ou p=1, on a alors :
+Dans le cas ou $p=1$, on a alors :
 
 \begin{align*}
- \langle f,T_0 \rangle _\omega &=  \frac{1}{n} \int_0^{2\pi} (pi-t) \sin(nt) \ dt\\
+ \langle f,T_0 \rangle _\omega &=  \frac{1}{n} \int_0^{2\pi} (\pi-t) \sin(nt) \ dt\\
  &=\frac{1}{n^2} \left[(\pi -t)  \cos(nt) \right]_0 ^{2\pi} + \frac{1}{n^2} \int_0^{2\pi} \cos(nt) \ dt\\
  &= - \frac{\pi}{n^2} + \frac{1}{n^3} \int_0^{2\pi n} \cos(\phi) \ d\phi\\
  &= - \frac{\pi}{n^2}
 \end{align*}
 
-Lorsque n=0, on a a :
+Lorsque $n=0$, on a a :
 \begin{align*}
  \langle f,T_n \rangle _\omega &=  \frac{1}{2} \int_0^{2\pi} f(\cos(t))\ dt
  =\frac{1}{2} \int_0^{2\pi} t^p (2\pi - t)^p \ dt 
@@ -540,19 +673,27 @@ Lorsque n=0, on a a :
  = \frac{2 \pi^3}{3}
 \end{align*}
 
-Dans le cas ou p=4, on a :
+Dans le cas ou $p=4$, on a :
 \begin{align*}
  \langle f,T_n \rangle _\omega &= \frac{p}{n} \int_0^{2\pi} (pi-t)\left[t (2\pi - t)\right]^{3} \sin(nt) \ dt
 \end{align*}
 
-Lorsque n=0, on a a :
+Lorsque $n=0$, on a a :
 \begin{align*}
  \langle f,T_0 \rangle _\omega &=  \frac{1}{2} \int_0^{2\pi} f(\cos(t))\ dt
  =\frac{1}{2} \int_0^{2\pi} t^4 (2\pi - t)^4 \ dt 
  =\frac{1}{2} \int_0^{2\pi} \left( 2 \pi t - t^2 \right)^4 \ dt\\
 \end{align*}
 
-\subsection{Question 2.c}
+\begin{figure}
+ \includegraphics[width=0.8\textwidth]{pswft.png}
+ \caption{Valeurs de produits scalaires pour $p = 1$}
+\end{figure}
+
+\begin{figure}
+ \includegraphics[width=0.8\textwidth]{err.png}
+ \caption{Erreur relative pour $p = 1$}
+\end{figure}
 
 
 
@@ -577,7 +718,7 @@ Ce qui donne lieu à $3n(n-1)$ opérations. On obtient alors un matrice triangul
 
 \section{Mise en œuvre numérique}
 
-\paragraph{1)} On sait déjà que l'on a le système linéaire $AU = F$ où $A = (a_{i,j})_{0 \leq i,j \leq N-2}$ et $a_{i,j} = 0$ dès que $i$ et $j$ sont de parité oppposée. De plus en notant $F = (f_i)_{0 \leq i \leq N-2}$ on a avec les conventions de l'énoncé
+ On sait déjà que l'on a le système linéaire $AU = F$ où $A = (a_{i,j})_{0 \leq i,j \leq N-2}$ et $a_{i,j} = 0$ dès que $i$ et $j$ sont de parité opposée. De plus en notant $F = (f_i)_{0 \leq i \leq N-2}$ on a avec les conventions de l'énoncé
 \[
  f_i = \sum_{k = 0}^K (\alpha \scalaire{\phi_{2k}''}{\phi_i} - \gamma \scalaire{\phi_{2k}}{\phi_i})u_{2k}
 \]
@@ -586,6 +727,425 @@ lorsque $i$ est pair et
  f_i = \sum_{k=0}^K (\alpha \scalaire{\phi_{2k+1}''}{\phi_i} - \gamma \scalaire{\phi_{2k+1}}{\phi_i})u_{2k+1}
 \]
 lorsque $i$ est impair. Alors en notant $G = \begin{pmatrix} G^1 \\ G^2                         \end{pmatrix}$ avec $G^1 = \begin{pmatrix}f_0 \\ f_2 \\ \vdots \\ f_{2K} \end{pmatrix}$ et $G^2 = \begin{pmatrix}f_1 \\ f_3 \\ \vdots \\ f_{2K+1} \end{pmatrix}$. On trouve bien un système équivalent $MV = G$ où $M$ est de la forme souhaitée.
+
+Nous avons testé la méthode sur le problème suivant : trouver $u$ telle que 
+\begin{align*}
+ \begin{cases}
+  -u''(x) + u(x) = x \quad \forall x \in ]-1,1[, \\
+  u(-1) = u(1) = 0.
+ \end{cases}
+\end{align*}
+Nous avons déterminé la solution exacte de ce problème par une méthode de tir et comparé la performances de cette méthode avec la résolution par méthode d'Euler combinée à la méthode de tir. La forme générale de la solution semble correcte mais il reste manifestement un problème de normalisation que nous n'avons pas su résoudre. Les fonctions Matlab/Octave sont reproduites en annexe.
+
+\begin{figure}
+ \centering
+ \includegraphics[width=0.8\textwidth]{sol.png}
+ \caption{Résulats obtenus pour le problème $-u'' + u = x$}
+\end{figure}
+
+\appendix
+
+\section{Fonctions Matlab/Octave}
+
+\begin{lstlisting}[language=Matlab]
+ function I=pswft(f,N)
+  
+  % f : fonction dont on veut calculer le produit scalaire avec les polyomes 
+  % de Tchebychev
+  % N : nombre de produits scalaires calcules
+  %
+  % I : vecteur contenant les valeurs successives des produits scalaires
+ 
+  tt=linspace(0,2*pi,N);
+  w=f(tt);
+  fft=fft(w);
+  m=length(tt);
+  I=pi*real(fft)./N;
+endfunction
+\end{lstlisting}
+
+
+\hrule
+
+\begin{lstlisting}[language=Matlab]
+ function I = pswft2(f,N)
+  % f : fonction dont on veut calculer le produit scalaire avec les polyomes
+  % de Tchebychev
+  % N : nombre de produits scalaires calcules
+  %
+  % I : vecteur contenant les valeurs successives des produits scalaires
+  fcos = @(x)(f(cos(x)));
+  I = pswft(fcos,N);
+endfunction
+\end{lstlisting}
+
+\hrule 
+
+\begin{lstlisting}[language=Matlab]
+ function U = gauss(A,F)
+  % Resout le systeme lineaire AU = F en utilisant la methode de Gauss 
+  % decrite dans l'exercice 6
+  N = size(A)(1);
+  % On realise les operations sur les lignes
+  for k = [N:-1:2]
+    A(k,:) -= A(k-1,:);
+    F(k) -= F(k-1);
+  endfor
+  
+  % On realise les operations sur les colonnes
+  lams = zeros(1,length([N:-1:2]));
+  for k = [N:-1:2]
+    lam = A(k,k-1)/A(k,k);
+    lams(k-1) = lam;
+    A(:,k-1) -= lam .* A(:,k);
+  endfor
+  U = solve_gauss(A,F);
+  U = transpose(U);
+endfunction
+\end{lstlisting}
+
+\hrule 
+
+\begin{lstlisting}[language=Matlab]
+ function U = solve_gauss(A,F)
+  N = size(A)(1);
+  U = zeros(1,N);
+  U(N) = F(N)/A(N,N);
+  for k = [N-1:-1:1]
+    U(k) = (F(k) - sum(A(k,k+1:end).*U(k+1:end)))/A(k,k);
+  endfor
+endfunction
+\end{lstlisting}
+
+\hrule 
+
+\begin{lstlisting}[language=Matlab]
+ function U = reorder(V)
+  l = length(V);
+  U = zeros(l,1);
+  K = floor(l/2);
+  for k = [1:K]
+    U(2*k-1) = V(k);
+    U(2*k) = V(K+k);
+  endfor
+endfunction
+\end{lstlisting}
+
+\hrule 
+
+\begin{lstlisting}[language=Matlab]
+% Retourne les N premiers polynomes de tchebychev calcules sur x
+function T = tchebychev(N,x)
+  l = length(x);
+  T = zeros(N,l);
+  T(1,:) = ones(1,l);
+  T(2,:) = x;
+  for k = [3:N]
+    T(k,:) = cos((k-1)*acos(x)); 
+  endfor
+endfunction 
+\end{lstlisting}
+
+\hrule 
+
+\begin{lstlisting}[language=Matlab]
+ function [M1,M2,G1,G2] = syslin(alpha,gamma,f,N)
+  % On commence par creer le systeme lineaire pour lequel on 
+  % n'a pas pris en compte la parite
+  A = zeros(N,N);
+  B = zeros(N,N);
+  F = zeros(N,1);
+  ps = pswft2(f,max(80,N+2));
+  display(num2str(size(ps)));
+  for l = [0:N-1]
+    for k = [0:N-1]
+      if mod(l,2) == mod(k,2)
+        if mod(l,2) == 0
+          if l==k
+            A(l+1,k+1) += 3*pi/2;
+          else 
+            A(l+1,k+1) += pi;
+          endif
+          if l < k
+            B(l+1,k+1) += -pi/2 * l**2 * k;
+          else
+            B(l+1,k+1) += -pi/2 * k**3;
+          endif
+        else
+          if l==k
+            A(l+1,k+1) += pi;
+          else 
+            A(l+1,k+1) += pi/2;
+          endif
+          if l < k
+            B(l+1,k+1) += -pi/2 * (l**2 - 1) * k;
+          else
+            B(l+1,k+1) += -pi/2 * (k**2 -1)*k;
+          endif
+        endif
+      endif
+    endfor
+    %F(l+1) = pswft(f,l+2,200) - pswft2(f,mod(l,2),200);
+    F(l+1) = ps(l+3) - ps(mod(l,2)+1);
+    j = mod(l,2);
+    Tl = @(t)(cos((l+2)*t));
+    Tj = @(t)(cos(j*t));
+    norm_l = (abs(pswft(Tl,max(80,N+3))(l+3)) + abs(pswft(Tj,max(80,N+3))(j+1)));
+    F(l+1)/= norm_l;
+  endfor
+  A = -alpha* B + gamma * A;
+  %display(["A = "; num2str(A)]);
+  % On modifie a present le systeme pour prendre en compte la parite
+  K = floor(N/2);
+  M1 = zeros(K,K);
+  M2 = zeros(K,K);
+  G1 = zeros(K,1);
+  G2 = zeros(K,1);
+  for l = [1:K]
+    for k = [1:K]
+      M1(l,k) = A(2*l-1,2*k-1);
+      M2(l,k) = A(2*l,2*k);
+    endfor
+    G1(l) = F(2*l-1);
+    G2(l) = F(2*l);
+  endfor
+endfunction
+\end{lstlisting}
+
+\hrule 
+
+\begin{lstlisting}[language=Matlab]
+ % Script qui permet de tester la méthode
+clear; clc; close all;
+p = 1;
+f = @(x)(x);
+alpha = 1;
+gamma = 1;
+N = 20;
+[M1,M2,G1,G2] = syslin(alpha,gamma,f,N);
+%display(["M1 = "; num2str(M1)])
+%display(["M2 = "; num2str(M2)])
+%display(["G1 = "; num2str(G1)])
+%display(["G2 = "; num2str(G2)])
+
+U1 = gauss(M1,G1);
+U2 = gauss(M2,G2);
+
+%display(["U1 = "; num2str(U1)])
+%display(["U2 = "; num2str(U2)])
+
+V1 = M1\G1;
+V2 = M2\G2;
+
+%display(["V1 = "; num2str(V1)])
+%display(["V2 = "; num2str(V2)])
+
+% On trouve que les deux méthodes de resolution donnent le meme resultat.
+
+U = [V1;V2];
+%display(["U = "; num2str(U)])
+
+% On réordonne les éléments de U
+U = reorder(U);
+%display(["U = "; num2str(U)])
+
+J = 250;
+x = linspace(-1,1,J);
+T = tchebychev(N+2,x);
+figure
+hold on
+for k = [1:5]
+  plot(x,T(k,:),"Displayname",num2str(k-1),"LineWidth",1.3)
+endfor
+title("Polynomes de Tchebychev")
+xlabel("x")
+ylabel("T_k(x)")
+legend
+hold off
+
+Phi = zeros(N,J);
+figure
+hold on
+for k = [1:N]
+  j = mod(k-1,2);
+  Phi(k,:) = T(k+2,:) - T(j+1,:);
+  Tk = @(t)(cos((k+1)*t));
+  Tj = @(t)(cos(j*t));
+  norm_k = (abs(pswft(Tk,max(80,N+3))(k+3)) + abs(pswft(Tj,max(80,N+3))(j+1)));
+  Phi(k,:) /= norm_k;
+  if k < 6
+    plot(x,Phi(k,:),"Displayname",num2str(k-1),"LineWidth",1.3)
+  endif
+endfor
+xlabel("x")
+ylabel("phi_k(x)")
+title("Fonctions phi")
+legend
+hold off
+
+[M1,M2,G1,G2] = syslin(alpha,gamma,f,N);
+U1 = gauss(M1,G1);
+U2 = gauss(M2,G2);
+V1 = M1\G1;
+V2 = M2\G2;
+U = [V1;V2];
+U = reorder(U);
+sol = transpose(U) * Phi;
+
+
+%sol_ex = @(x)(f(x)/gamma *(1 - cosh(sqrt(gamma) * x).* 1/cosh(sqrt(gamma))));
+u1 = @(x)(2*exp(-x -1) - exp(x + 1) + x);
+u2 = @(x)(1/2 * (exp(x + 1) - exp(-x-1)));
+kappa = - u1(1)/u2(1) ;
+sol_ex = @(x)(u1(x) + kappa * u2(x));
+
+u1_exp = sedoci(x,@(xt)(alpha),@(t)(0),@(t)(0),@(t)(gamma),f,[0;0]);
+u2_exp = sedoci(x,@(xt)(alpha),@(t)(0),@(t)(0),@(t)(gamma),f,[0;1]);
+kappa = - u1_exp(J)/u2_exp(J);
+
+sol_exp = u1_exp + kappa* u2_exp;
+
+figure
+hold on
+plot(x,sol,"Displayname","Solution","LineWidth",1.5)
+plot(x,sol_exp,"Displayname","Solution Tir","Color","black","LineWidth",1.5)
+plot(x,sol_ex(x),"Displayname","Solution exacte","Color","red","LineWidth",1.5);
+xlabel("x")
+ylabel("u(x)")
+title("Résultats pour -u'' + u = x ; u(-1) = u(1) = 0")
+legend
+hold off
+\end{lstlisting}
+
+\hrule 
+
+\begin{lstlisting}[language=Matlab]
+ %%% Script pour l'exercice 5 - transformee de Fourier rapide %%%%%%%%%%%%%%%%%%%
+
+clear; clc; close all;
+
+%%% Trace de fcos ==============================================================
+p=1;
+fcos = @(t) ((t.^p).*((2*pi.-t)).^p);
+figure();
+fplot(fcos, [0 , 2*pi], "DisplayName", "fcos");
+xlabel("tet");
+ylabel("f(cos(tet))");
+title(["Trace de fcos pour p=",num2str(p)]);
+
+
+%%% Trace des coefficients  ====================================================
+J = 20;  N=85;
+res=zeros(1,J);
+K = 1:J;
+coefs_reels = -2*pi./(K.^2);
+coefs_reels = [2*pi**3/3,coefs_reels];
+ps = pswft(fcos,N);
+display(num2str(size(ps)));
+%resint=[];
+for i=0:J
+  res(i+1)=ps(i+1);
+endfor
+
+figure();
+hold on;
+plot(0:J,res,"DisplayName","Coefs calculés","LineWidth",1.3);
+plot(0:J,coefs_reels,"DisplayName","Coefs réels","LineWidth",1.3);
+xlabel("n");
+ylabel("Valeur");
+title("Calcul des produits scalaires dans le cas p=1");
+legend;
+hold off;
+
+
+%%% Convergence de la FFT  =====================================================
+p=1; n=5;
+fcos = @(t) ((t.^p).*((2*pi.-t)).^p);
+N = [20:5:100];
+coefs = zeros(1,length(N));
+errs = zeros(1,length(N));
+for i=[1:length(N)]
+  coefs(i) = pswft(fcos,N(i))(n+1);
+  errs(i) = abs(-2*pi/(n^2)-coefs(i))/(2*pi/(n^2));
+endfor
+
+upto=length(N)-3;
+P=polyfit(N(1:upto), log(errs)(1:upto),1);
+disp(["coefficient directeur par interpolation : ",num2str(P(1))]);
+
+figure;
+hold on;
+plot(N,[log(errs); P(2).+P(1).*N],"LineWidth",1.3);
+legend(["log(err)"; "droite d'interpolation"]);
+title(["Erreur relative pour (p,n)=(", num2str(p),",", num2str(n),")"]);
+xlabel("N");
+ylabel("log(Erreur)");
+hold off;
+
+
+%%% Trace de fcos ==============================================================
+p=4;
+fcos = @(t) ((t.^p).*((2*pi.-t)).^p);
+figure();
+hold on;
+fplot(fcos, [0 , 2*pi], "DisplayName", "fcos");
+xlabel("tet");
+ylabel("f(cos(tet))");
+title(["Trace de fcos pour p=",num2str(p)]);
+hold off;
+
+%{
+%%% Convergence de la FFT  =====================================================
+p=4; n=0;
+fcos = @(t) ((t.^p).*((2*pi.-t)).^p);
+N = [20:5:300];
+coefs = zeros(1,length(N));
+errs = zeros(1,length(N));
+
+fun=@(x) fcos(x).*cos(n.*x);
+valex=256*pi/(2*315); %pswft(fcos,85)(n+1); %a remplacer par la valeur exacte
+for i=[1:length(N)]
+  coefs(i) = pswft(fcos,N(i))(n+1);
+  errs(i) = abs((valex-coefs(i))/(valex));
+endfor
+
+upto=length(N)-3;
+P=polyfit(N(1:upto), log(errs)(1:upto),1);
+disp(["coefficient directeur par interpolation : ",num2str(P(1))]);
+
+figure;
+plot(N,[log(errs); P(2).+P(1).*N]);
+legend(["log(err)"; "droite d'interpolation"]);
+title(["Erreur relative pour (p,n)=(", num2str(p),",", num2str(n),")"]);
+xlabel("N");
+ylabel("log(Erreur)");
+%}
+
+%%% Temps de calcul compare a une methode d'integration naive ==================
+p=4; N=255;
+Iint=zeros(1,N);
+Ifft=zeros(1,N);
+
+ts=cputime;
+fcos = @(tet) (tet.^p).*((2*pi.-tet).^p);
+Ifft=pswft(fcos,N);
+te=cputime;
+tft=te-ts;
+
+ts=cputime;
+for n=0:N
+  fun=@(x) fcos(x).*cos(n.*x);
+  Iint(n+1)=integral(fun,0,2*pi)/2;
+endfor
+te=cputime;
+tint=te-ts;
+
+disp(["temps total de calcul par transform�e de fourier : ",num2str(tft)," s"]);
+disp(["temps total de calcul par integration numerique : ",num2str(tint)," s"]);
+
+\end{lstlisting}
+
+
 
 
 \end{document}

@@ -1,4 +1,6 @@
 function U = gauss(A,F)
+  % Resout le systeme lineaire AU = F en utilisant la methode de Gauss 
+  % decrite dans l'exercice 6
   N = size(A)(1);
   % On réalise les opérations sur les lignes
   for k = [N:-1:2]

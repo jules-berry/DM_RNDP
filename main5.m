@@ -27,11 +27,11 @@ endfor
 
 figure();
 hold on;
-plot(0:J,res,"DisplayName","Coefs calcul�s");
-plot(0:J,coefs_reels,"DisplayName","Coefs r�els");
+plot(0:J,res,"DisplayName","Coefs calculés","LineWidth",1.3);
+plot(0:J,coefs_reels,"DisplayName","Coefs réels","LineWidth",1.3);
 xlabel("n");
-ylabel("pswft(fcos,n)");
-title("Calcul des produits scalaires");
+ylabel("Valeur");
+title("Calcul des produits scalaires dans le cas p=1");
 legend;
 hold off;
 
@@ -53,7 +53,7 @@ disp(["coefficient directeur par interpolation : ",num2str(P(1))]);
 
 figure;
 hold on;
-plot(N,[log(errs); P(2).+P(1).*N]);
+plot(N,[log(errs); P(2).+P(1).*N],"LineWidth",1.3);
 legend(["log(err)"; "droite d'interpolation"]);
 title(["Erreur relative pour (p,n)=(", num2str(p),",", num2str(n),")"]);
 xlabel("N");

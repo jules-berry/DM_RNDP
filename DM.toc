@@ -1,31 +1,40 @@
 \babel@toc {french}{}
-\contentsline {section}{\numberline {1}Préliminaires}{2}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Question 1}{2}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Question 2}{2}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Question 3}{3}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Quastion 4}{4}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Question 5}{6}{subsection.1.5}%
-\contentsline {section}{\numberline {2}Polynômes de Tchebychev}{6}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Question 1}{6}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Question 2}{7}{subsection.2.2}%
-\contentsline {paragraph}{a.}{7}{section*.2}%
-\contentsline {paragraph}{b.}{7}{section*.3}%
-\contentsline {paragraph}{c.}{8}{section*.4}%
-\contentsline {paragraph}{d.}{8}{section*.5}%
-\contentsline {subsection}{\numberline {2.3}Question 3}{9}{subsection.2.3}%
-\contentsline {paragraph}{a.}{9}{section*.6}%
-\contentsline {paragraph}{b.}{9}{section*.7}%
-\contentsline {subsection}{\numberline {2.4}Question 4}{9}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Système linéaire issu de la méthode des résidus pondérés}{10}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Question 1}{10}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Question 2}{10}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Question 3}{11}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Question 4}{12}{subsection.3.4}%
-\contentsline {paragraph}{a.}{13}{section*.8}%
-\contentsline {paragraph}{b.}{13}{section*.9}%
-\contentsline {paragraph}{c.}{13}{section*.10}%
-\contentsline {section}{\numberline {4}Méthode de Gauss}{13}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Question 1}{13}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Question 2}{14}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Mise en œuvre numérique}{14}{section.5}%
-\contentsline {paragraph}{1)}{14}{section*.11}%
+\contentsline {section}{\numberline {1}Préliminaires}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Question 1}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Question 2}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Question 3}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Quastion 4}{5}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Question 5}{7}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Polynômes de Tchebychev}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Question 1}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Question 2}{9}{subsection.2.2}%
+\contentsline {paragraph}{a.}{9}{section*.3}%
+\contentsline {paragraph}{b.}{9}{section*.4}%
+\contentsline {paragraph}{c.}{9}{section*.5}%
+\contentsline {paragraph}{d.}{10}{section*.6}%
+\contentsline {subsection}{\numberline {2.3}Question 3}{10}{subsection.2.3}%
+\contentsline {paragraph}{a.}{10}{section*.7}%
+\contentsline {paragraph}{b.}{11}{section*.8}%
+\contentsline {subsection}{\numberline {2.4}Question 4}{11}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Méthode des rectangles pour l’approximation de l’intégrale d’une fonction périodique sur un intervalle de période}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Question 1}{11}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Question 2}{12}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Partie a}{12}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Partie b}{13}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Partie c}{13}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Question 3}{14}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Système linéaire issu de la méthode des résidus pondérés}{14}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Question 1}{15}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Question 2}{15}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Question 3}{15}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Question 4}{17}{subsection.4.4}%
+\contentsline {paragraph}{a.}{17}{section*.10}%
+\contentsline {paragraph}{b.}{18}{section*.11}%
+\contentsline {paragraph}{c.}{18}{section*.12}%
+\contentsline {section}{\numberline {5}Transform\'ee de Fourier rapide}{18}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Question 2.a}{18}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Méthode de Gauss}{21}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Question 1}{21}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Question 2}{21}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Mise en œuvre numérique}{21}{section.7}%
+\contentsline {section}{\numberline {A}Fonctions Matlab/Octave}{22}{appendix.A}%

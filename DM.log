@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.30)  14 APR 2021 18:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.30)  16 APR 2021 17:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -625,95 +625,120 @@ LaTeX Font Info:    Redeclaring math accent \dot on input line 266.
 LaTeX Font Info:    Redeclaring math accent \mathring on input line 267.
 \symUfutm=\mathgroup8
 )
-\c@definition=\count288
-\c@remarque=\count289
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count288
+\lst@gtempboxa=\box52
+\lst@token=\toks35
+\lst@length=\count289
+\lst@currlwidth=\dimen177
+\lst@column=\count290
+\lst@pos=\count291
+\lst@lostspace=\dimen178
+\lst@width=\dimen179
+\lst@newlines=\count292
+\lst@lineno=\count293
+\lst@maxwidth=\dimen180
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+\c@lstnumber=\count294
+\lst@skipnumbers=\count295
+\lst@framebox=\box53
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2019/09/10 1.8c listings configuration
+))
+Package: listings 2019/09/10 1.8c (Carsten Heinz)
+\c@definition=\count296
+\c@remarque=\count297
 
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 35.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 36.
 
-\c@prop=\count290
-\c@thm=\count291
-\c@lemme=\count292
-\c@corollaire=\count293
+\c@prop=\count298
+\c@thm=\count299
+\c@lemme=\count300
+\c@corollaire=\count301
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count294
-\l__pdf_internal_box=\box52
+\l__kernel_color_stack_int=\count302
+\l__pdf_internal_box=\box54
 )
 (./DM.aux)
 \openout1 = `DM.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 56.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 57.
 LaTeX Font Info:    Trying to load font information for FML+futm on input line 
-56.
+57.
  (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 57.
 LaTeX Font Info:    Trying to load font information for FMS+futm on input line 
-56.
+57.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 57.
 LaTeX Font Info:    Trying to load font information for FMX+futm on input line 
-56.
+57.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Info: Redefining \degres on input line 56.
-LaTeX Info: Redefining \dots on input line 56.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Info: Redefining \degres on input line 57.
+LaTeX Info: Redefining \dots on input line 57.
 Package french.ldf Info: Setting StandardItemizeEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 56.
+(french.ldf)             reported on input line 57.
 Package french.ldf Info: Setting StandardEnumerateEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 56.
-LaTeX Info: Redefining \up on input line 56.
+(french.ldf)             reported on input line 57.
+LaTeX Info: Redefining \up on input line 57.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count295
-\scratchdimen=\dimen177
-\scratchbox=\box53
-\nofMPsegments=\count296
-\nofMParguments=\count297
-\everyMPshowfont=\toks35
-\MPscratchCnt=\count298
-\MPscratchDim=\dimen178
-\MPnumerator=\count299
-\makeMPintoPDFobject=\count300
-\everyMPtoPDFconversion=\toks36
+\scratchcounter=\count303
+\scratchdimen=\dimen181
+\scratchbox=\box55
+\nofMPsegments=\count304
+\nofMParguments=\count305
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count306
+\MPscratchDim=\dimen182
+\MPnumerator=\count307
+\makeMPintoPDFobject=\count308
+\everyMPtoPDFconversion=\toks37
 )
-Package ragged2e Info: ABD: executing \RaggedRight on input line 56.
+Package ragged2e Info: ABD: executing \RaggedRight on input line 57.
  ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 56.
-\AtBeginShipoutBox=\box54
-Package hyperref Info: Link coloring OFF on input line 56.
+LaTeX Info: Redefining \selectfont on input line 57.
+\AtBeginShipoutBox=\box56
+Package hyperref Info: Link coloring OFF on input line 57.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -724,11 +749,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count301
+\c@section@level=\count309
 )
-LaTeX Info: Redefining \ref on input line 56.
-LaTeX Info: Redefining \pageref on input line 56.
-LaTeX Info: Redefining \nameref on input line 56.
+LaTeX Info: Redefining \ref on input line 57.
+LaTeX Info: Redefining \pageref on input line 57.
+LaTeX Info: Redefining \nameref on input line 57.
 
 (./DM.out) (./DM.out)
 \@outlinefile=\write3
@@ -769,43 +794,44 @@ LaTeX Info: Redefining \nameref on input line 56.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Redeclaring math accent \widehat on input line 56.
-LaTeX Font Info:    Redeclaring math accent \widetilde on input line 56.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 57.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 57.
+\c@lstlisting=\count310
 LaTeX Font Info:    Trying to load font information for FML+futmi on input line
- 59.
+ 60.
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 59.
+(Font)              scaled to size 13.24796pt on input line 60.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 59.
+(Font)              scaled to size 9.19998pt on input line 60.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 59.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 59.
+(Font)              scaled to size 7.35999pt on input line 60.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 60.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 59.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 60.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 59
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 60
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 59.
+(Font)              scaled to size 13.24796pt on input line 60.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 59.
+(Font)              scaled to size 9.19998pt on input line 60.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 59.
+(Font)              scaled to size 7.35999pt on input line 60.
  (./DM.toc
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
 (Font)              scaled to size 11.03998pt on input line 3.
@@ -819,24 +845,30 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 8.27998pt on input line 3.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 6.43999pt on input line 3.
-)
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write4
 \openout4 = `DM.toc'.
 
- [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (26.63614pt too wide) detected at line 88
+ [2]
+Overfull \hbox (26.63614pt too wide) detected at line 89
 []
  []
 
-[2]
-Overfull \hbox (32.2156pt too wide) detected at line 123
+[3]
+Overfull \hbox (32.2156pt too wide) detected at line 124
 []
  []
 
-[3] [4] [5] [6] [7] [8]
-Overfull \hbox (10.8946pt too wide) in paragraph at lines 339--340
+[4] [5] [6] [7]
+<tchebychev.png, id=207, 1204.5pt x 903.375pt>
+File: tchebychev.png Graphic file (type png)
+<use tchebychev.png>
+Package pdftex.def Info: tchebychev.png  used on input line 279.
+(pdftex.def)             Requested size: 334.60422pt x 250.95833pt.
+ [8 <./tchebychev.png (PNG copy)>] [9]
+Overfull \hbox (10.8946pt too wide) in paragraph at lines 348--349
  []\T1/futs/b/n/12 a.[] \T1/futs/m/n/12 Pour tout $\FML/futmi/m/it/12 n$ \T1/fu
 ts/m/n/12 on a $\FML/futmi/m/it/12 T[]\T1/futs/m/n/12 ([](\FML/futmi/m/it/12 x\
 T1/futs/m/n/12 )) \FMS/futm/m/n/12 � []\T1/futs/m/n/12 (\FML/futmi/m/it/12 nx\T
@@ -846,7 +878,7 @@ T1/futs/m/n/12 )) \FMS/futm/m/n/12 � []\T1/futs/m/n/12 (\FML/futmi/m/it/12 nx\T
  []
 
 
-Overfull \hbox (35.69218pt too wide) in paragraph at lines 339--340
+Overfull \hbox (35.69218pt too wide) in paragraph at lines 348--349
 \T1/futs/m/n/12 1\FMS/futm/m/n/12 g$ \T1/futs/m/n/12 on a $[](\FML/futmi/m/it/1
 2 n^^R[]\T1/futs/m/n/12 ) \FMS/futm/m/n/12 � [] [] � \T1/futs/m/n/12 0$ et donc
  $\FML/futmi/m/it/12 T[]\T1/futs/m/n/12 ([](\FML/futmi/m/it/12 ^^R[]\T1/futs/m/
@@ -855,8 +887,8 @@ n/12 )) \FMS/futm/m/n/12 � \T1/futs/m/n/12 0$. Alors la fa-mille $\FMS/futm/m/n
 12 g[]$
  []
 
-
-Overfull \hbox (5.70491pt too wide) in paragraph at lines 344--345
+[10]
+Overfull \hbox (5.70491pt too wide) in paragraph at lines 353--354
  []\T1/futs/b/n/12 b.[] \T1/futs/m/n/12 A par-tir de la re-la-tion $\FML/futmi/
 m/it/12 T[]\T1/futs/m/n/12 (\FML/futmi/m/it/12 x\T1/futs/m/n/12 ) \FMS/futm/m/n
 /12 � \T1/futs/m/n/12 2\FML/futmi/m/it/12 xT[]\T1/futs/m/n/12 (\FML/futmi/m/it/
@@ -865,45 +897,408 @@ m/it/12 T[]\T1/futs/m/n/12 (\FML/futmi/m/it/12 x\T1/futs/m/n/12 ) \FMS/futm/m/n
 mi/m/it/12 T[]\T1/futs/m/n/12 (1) \FMS/futm/m/n/12 �
  []
 
-[9] [10]
-Overfull \hbox (10.70132pt too wide) detected at line 446
-[]
- []
-
-[11]
-Overfull \hbox (10.70132pt too wide) detected at line 453
+[11] [12] [13] [14] [15]
+Overfull \hbox (10.70132pt too wide) detected at line 573
 []
  []
 
 
-Overfull \hbox (10.70132pt too wide) detected at line 461
+Overfull \hbox (10.70132pt too wide) detected at line 580
 []
  []
 
 
-Overfull \hbox (10.70132pt too wide) detected at line 468
+Overfull \hbox (10.70132pt too wide) detected at line 588
 []
  []
 
-[12] [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 535.
- [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 535.
+
+Overfull \hbox (10.70132pt too wide) detected at line 595
+[]
+ []
+
+[16]
+<phi.png, id=255, 1204.5pt x 903.375pt>
+File: phi.png Graphic file (type png)
+<use phi.png>
+Package pdftex.def Info: phi.png  used on input line 602.
+(pdftex.def)             Requested size: 334.60422pt x 250.95833pt.
+ [17 <./phi.png (PNG copy)>] [18]
+<pswft.png, id=268, 1204.5pt x 903.375pt>
+File: pswft.png Graphic file (type png)
+<use pswft.png>
+Package pdftex.def Info: pswft.png  used on input line 689.
+(pdftex.def)             Requested size: 334.60422pt x 250.95833pt.
+<err.png, id=269, 1204.5pt x 903.375pt>
+File: err.png Graphic file (type png)
+<use err.png>
+Package pdftex.def Info: err.png  used on input line 694.
+(pdftex.def)             Requested size: 334.60422pt x 250.95833pt.
+ [19] [20 <./pswft.png (PNG copy)> <./err.png (PNG copy)>] [21]
+<sol.png, id=287, 1204.5pt x 903.375pt>
+File: sol.png Graphic file (type png)
+<use sol.png>
+Package pdftex.def Info: sol.png  used on input line 742.
+(pdftex.def)             Requested size: 334.60422pt x 250.95833pt.
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+)
+Overfull \hbox (63.28685pt too wide) in paragraph at lines 753--754
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[22 <./sol.png (PNG copy)>]
+Overfull \hbox (37.94261pt too wide) in paragraph at lines 757--759
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+futs on input line 
+759.
+(/usr/share/texlive/texmf-dist/tex/latex/fourier/ts1futs.fd
+File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
+)
+Overfull \hbox (63.28685pt too wide) in paragraph at lines 772--773
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (37.94261pt too wide) in paragraph at lines 776--777
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (25.2705pt too wide) in paragraph at lines 786--787
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[23] [24]
+Overfull \hbox (94.96715pt too wide) in paragraph at lines 893--894
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (12.59837pt too wide) in paragraph at lines 898--899
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[25]
+
+! Package inputenc Error: Invalid UTF-8 byte sequence.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.918  % Script qui permet de tester la méthode
+                                                
+? 
+
+! Package inputenc Error: Invalid UTF-8 byte "A9.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.918  % Script qui permet de tester la méthode
+                                                
+? 
+
+! Package inputenc Error: Invalid UTF-8 byte sequence.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.943 % On trouve que les deux méthodes 
+                                         de resolution donnent le meme resul...
+
+? 
+
+! Package inputenc Error: Invalid UTF-8 byte "A9.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.943 % On trouve que les deux méthodes 
+                                         de resolution donnent le meme resul...
+
+? 
+
+Overfull \hbox (50.61473pt too wide) in paragraph at lines 943--945
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[26]
+
+! Package inputenc Error: Invalid UTF-8 byte sequence.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.948 % On réordonne 
+                      les éléments de U
+? 
+
+! Package inputenc Error: Invalid UTF-8 byte "A9.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.948 % On réordonne 
+                      les éléments de U
+? 
+
+! Package inputenc Error: Invalid UTF-8 byte sequence.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.948 % On réordonne les éléments 
+                                     de U
+? 
+
+! Package inputenc Error: Invalid UTF-8 byte "A9.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.948 % On réordonne les éléments 
+                                     de U
+? 
+
+! Package inputenc Error: Invalid UTF-8 byte sequence.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.948 % On réordonne les éléments 
+                                     de U
+? 
+
+Overfull \hbox (82.29503pt too wide) in paragraph at lines 974--975
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[27]
+Overfull \hbox (75.95897pt too wide) in paragraph at lines 996--997
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][] 
+ []
+
+
+Overfull \hbox (12.59837pt too wide) in paragraph at lines 1002--1003
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (12.59837pt too wide) in paragraph at lines 1003--1004
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (63.28685pt too wide) in paragraph at lines 1011--1012
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (88.63109pt too wide) in paragraph at lines 1012--1013
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+! Package inputenc Error: Invalid UTF-8 byte sequence.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1015 title("Résultats 
+                         pour -u'' + u = x ; u(-1) = u(1) = 0")
+? 
+
+! Package inputenc Error: Invalid UTF-8 byte "A9.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1015 title("Résultats 
+                         pour -u'' + u = x ; u(-1) = u(1) = 0")
+? 
+
+Overfull \hbox (94.96715pt too wide) in paragraph at lines 1023--1025
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (88.63109pt too wide) in paragraph at lines 1027--1028
+[][][][][][][][][][][][][] 
+ []
+
+[28]
+Overfull \hbox (88.63109pt too wide) in paragraph at lines 1037--1038
+[][][][][][][][][][][][][][][] 
+ []
+
+
+! Package inputenc Error: Invalid UTF-8 byte sequence.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1052 ...(0:J,res,"DisplayName","Coefs calculés"
+                                                  ,"LineWidth",1.3);
+? 
+
+! Package inputenc Error: Invalid UTF-8 byte "A9.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1052 ...(0:J,res,"DisplayName","Coefs calculés"
+                                                  ,"LineWidth",1.3);
+? 
+
+! Package inputenc Error: Invalid UTF-8 byte sequence.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1053 ...coefs_reels,"DisplayName","Coefs réels"
+                                                  ,"LineWidth",1.3);
+? 
+
+! Package inputenc Error: Invalid UTF-8 byte "A9.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1053 ...coefs_reels,"DisplayName","Coefs réels"
+                                                  ,"LineWidth",1.3);
+? 
+
+Overfull \hbox (6.26231pt too wide) in paragraph at lines 1053--1054
+[][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (88.63109pt too wide) in paragraph at lines 1061--1062
+[][][][][][][][][][][][][][][][][] 
+ []
+
+[29]
+Overfull \hbox (6.26231pt too wide) in paragraph at lines 1074--1076
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (37.94261pt too wide) in paragraph at lines 1080--1081
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (88.63109pt too wide) in paragraph at lines 1086--1087
+[][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (88.63109pt too wide) in paragraph at lines 1098--1099
+[][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (69.62291pt too wide) in paragraph at lines 1106--1107
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[30]
+Overfull \hbox (6.26231pt too wide) in paragraph at lines 1114--1116
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (37.94261pt too wide) in paragraph at lines 1119--1120
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (88.63109pt too wide) in paragraph at lines 1124--1125
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+! Package inputenc Error: Invalid UTF-8 byte sequence.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1143 ...temps total de calcul par transform�e 
+                                                  de fourier : ",num2str(tft...
+
+? 
+
+! Package inputenc Error: Invalid UTF-8 byte "BF.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1143 ...temps total de calcul par transform�e 
+                                                  de fourier : ",num2str(tft...
+
+? 
+
+! Package inputenc Error: Invalid UTF-8 byte "BD.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1143 ...temps total de calcul par transform�e 
+                                                  de fourier : ",num2str(tft...
+
+? 
+
+Overfull \hbox (101.3032pt too wide) in paragraph at lines 1143--1144
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (88.63109pt too wide) in paragraph at lines 1144--1146
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1151.
+[31]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1151.
  (./DM.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 535.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 535.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1151.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1151.
+
 Package rerunfilecheck Info: File `DM.out' has not changed.
-(rerunfilecheck)             Checksum: AA365C104E2DC144D4322F82CD639421;1235.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 535.
+(rerunfilecheck)             Checksum: 2C032C45921BDB24F637A791EA9BF9F4;1979.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1151.
  ) 
 Here is how much of TeX's memory you used:
- 11541 strings out of 481239
- 170164 string characters out of 5920377
- 461830 words of memory out of 5000000
- 26486 multiletter control sequences out of 15000+600000
- 635521 words of font info for 143 fonts, out of 8000000 for 9000
+ 14312 strings out of 481239
+ 205683 string characters out of 5920377
+ 679025 words of memory out of 5000000
+ 28834 multiletter control sequences out of 15000+600000
+ 643264 words of font info for 149 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,19n,42p,904b,503s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,19n,42p,904b,2424s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/fourier/fourier-bb.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/fourier/fourier-mcl.pfb></usr/share/texlive/texmf-dis
@@ -913,10 +1308,10 @@ e1/public/fourier/fourier-mlit.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/fourier/fourier-ms.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/u
 topia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on DM.pdf (14 pages, 119669 bytes).
+Output written on DM.pdf (31 pages, 473552 bytes).
 PDF statistics:
- 245 PDF objects out of 1000 (max. 8388607)
- 217 compressed objects within 3 object streams
- 53 named destinations out of 1000 (max. 500000)
- 161 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 823 PDF objects out of 1000 (max. 8388607)
+ 768 compressed objects within 8 object streams
+ 446 named destinations out of 1000 (max. 500000)
+ 266 words of extra memory for PDF output out of 10000 (max. 10000000)
 

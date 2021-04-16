@@ -1,9 +1,10 @@
+% Script qui permet de tester la méthode
 clear; clc; close all;
 p = 1;
 f = @(x)(x);
 alpha = 1;
 gamma = 1;
-N = 100;
+N = 20;
 [M1,M2,G1,G2] = syslin(alpha,gamma,f,N);
 %display(["M1 = "; num2str(M1)])
 %display(["M2 = "; num2str(M2)])
@@ -22,7 +23,7 @@ V2 = M2\G2;
 %display(["V1 = "; num2str(V1)])
 %display(["V2 = "; num2str(V2)])
 
-% On trouve que les deux méthodes de résolution donnent le meme résultat.
+% On trouve que les deux méthodes de resolution donnent le meme resultat.
 
 U = [V1;V2];
 %display(["U = "; num2str(U)])
@@ -37,9 +38,11 @@ T = tchebychev(N+2,x);
 figure
 hold on
 for k = [1:5]
-  plot(x,T(k,:),"Displayname",num2str(k-1))
+  plot(x,T(k,:),"Displayname",num2str(k-1),"LineWidth",1.3)
 endfor
-title("Polynomes de tchebychev")
+title("Polynomes de Tchebychev")
+xlabel("x")
+ylabel("T_k(x)")
 legend
 hold off
 
@@ -51,12 +54,15 @@ for k = [1:N]
   Phi(k,:) = T(k+2,:) - T(j+1,:);
   Tk = @(t)(cos((k+1)*t));
   Tj = @(t)(cos(j*t));
-  norm_k = (pswft(Tk,max(80,N+3))(k+3) + pswft(Tj,max(80,N+3))(j+1));
+  norm_k = (abs(pswft(Tk,max(80,N+3))(k+3)) + abs(pswft(Tj,max(80,N+3))(j+1)));
   Phi(k,:) /= norm_k;
-  if k < 10
-    plot(x,Phi(k,:),"Displayname",num2str(k-1))
+  if k < 6
+    plot(x,Phi(k,:),"Displayname",num2str(k-1),"LineWidth",1.3)
   endif
 endfor
+xlabel("x")
+ylabel("phi_k(x)")
+title("Fonctions phi")
 legend
 hold off
 
@@ -69,9 +75,6 @@ U = [V1;V2];
 U = reorder(U);
 sol = transpose(U) * Phi;
 
-
-[A,F] = syslin_df(gamma,f,0,0,J+1);
-sol_df = A\F';
 
 %sol_ex = @(x)(f(x)/gamma *(1 - cosh(sqrt(gamma) * x).* 1/cosh(sqrt(gamma))));
 u1 = @(x)(2*exp(-x -1) - exp(x + 1) + x);
